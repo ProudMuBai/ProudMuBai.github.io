@@ -1,0 +1,636 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#FFF">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+<link rel="icon" type="image/ico" sizes="32x32" href="/images/favicon.ico">
+  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+<link rel="alternate" type="application/rss+xml" title="源夢" href="https://blog.mubai.link/rss.xml" />
+<link rel="alternate" type="application/atom+xml" title="源夢" href="https://blog.mubai.link/atom.xml" />
+<link rel="alternate" type="application/json" title="源夢" href="https://blog.mubai.link/feed.json" />
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Mulish:300,300italic,400,400italic,700,700italic%7CFredericka%20the%20Great:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20JP:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20SC:300,300italic,400,400italic,700,700italic%7CInconsolata:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+
+<link rel="stylesheet" href="/css/app.css?v=0.2.5">
+
+  
+  <meta name="keywords" content="学习笔记,vue" />
+
+
+<link rel="canonical" href="https://blog.mubai.link/pdl/NodeJs/Vue/vue3%E6%9E%84%E5%BB%BA/">
+
+
+
+  <title>
+Vue项目构建 - Vue - 编程 |
+MuBai Boat = 源夢 = 人生如逆旅, 我亦是行人</title>
+<meta name="generator" content="Hexo 8.1.1"></head>
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div id="loading">
+    <div class="cat">
+      <div class="body"></div>
+      <div class="head">
+        <div class="face"></div>
+      </div>
+      <div class="foot">
+        <div class="tummy-end"></div>
+        <div class="bottom"></div>
+        <div class="legs left"></div>
+        <div class="legs right"></div>
+      </div>
+      <div class="paw">
+        <div class="hands left"></div>
+        <div class="hands right"></div>
+      </div>
+    </div>
+  </div>
+  <div id="container">
+    <header id="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="inner">
+        <div id="brand">
+          <div class="pjax">
+          
+  <h1 itemprop="name headline">Vue项目构建
+  </h1>
+  
+<div class="meta">
+  <span class="item" title="创建时间：2026-03-18 21:30:25">
+    <span class="icon">
+      <i class="ic i-calendar"></i>
+    </span>
+    <span class="text">发表于</span>
+    <time itemprop="dateCreated datePublished" datetime="2026-03-18T21:30:25+08:00">2026-03-18</time>
+  </span>
+  <span class="item" title="本文字数">
+    <span class="icon">
+      <i class="ic i-pen"></i>
+    </span>
+    <span class="text">本文字数</span>
+    <span>5.4k</span>
+    <span class="text">字</span>
+  </span>
+  <span class="item" title="阅读时长">
+    <span class="icon">
+      <i class="ic i-clock"></i>
+    </span>
+    <span class="text">阅读时长</span>
+    <span>5 分钟</span>
+  </span>
+</div>
+
+
+          </div>
+        </div>
+        <nav id="nav">
+  <div class="inner">
+    <div class="toggle">
+      <div class="lines" aria-label="切换导航栏">
+        <span class="line"></span>
+        <span class="line"></span>
+        <span class="line"></span>
+      </div>
+    </div>
+    <ul class="menu">
+      <li class="item title"><a href="/" rel="start">MuBai Boat</a></li>
+    </ul>
+    <ul class="right">
+      <li class="item theme">
+        <i class="ic i-sun"></i>
+      </li>
+      <li class="item search">
+        <i class="ic i-search"></i>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+      </div>
+      <div id="imgs" class="pjax">
+        <ul>
+          <li class="item" data-background-image="https://www.loliapi.com/acg/?688907"></li>
+          <li class="item" data-background-image="https://www.loliapi.com/acg/?456754"></li>
+          <li class="item" data-background-image="https://www.loliapi.com/acg/?850537"></li>
+          <li class="item" data-background-image="https://www.loliapi.com/acg/?123751"></li>
+          <li class="item" data-background-image="https://www.loliapi.com/acg/?402726"></li>
+          <li class="item" data-background-image="https://www.loliapi.com/acg/?406217"></li>
+        </ul>
+      </div>
+    </header>
+    <div id="waves">
+      <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+        <defs>
+          <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+        </defs>
+        <g class="parallax">
+          <use xlink:href="#gentle-wave" x="48" y="0" />
+          <use xlink:href="#gentle-wave" x="48" y="3" />
+          <use xlink:href="#gentle-wave" x="48" y="5" />
+          <use xlink:href="#gentle-wave" x="48" y="7" />
+        </g>
+      </svg>
+    </div>
+    <main>
+      <div class="inner">
+        <div id="main" class="pjax">
+          
+  <div class="article wrap">
+    
+<div class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
+<i class="ic i-home"></i>
+<span><a href="/">首页</a></span><i class="ic i-angle-right"></i>
+<span  itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="/categories/pdl/" itemprop="item" rel="index" title="分类于 编程"><span itemprop="name">编程</span></a>
+<meta itemprop="position" content="1" /></span>
+<i class="ic i-angle-right"></i>
+<span  class="current" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="/categories/pdl/Vue/" itemprop="item" rel="index" title="分类于 Vue"><span itemprop="name">Vue</span></a>
+<meta itemprop="position" content="2" /></span>
+</div>
+
+    <article itemscope itemtype="http://schema.org/Article" class="post block" lang="zh-CN">
+  <link itemprop="mainEntityOfPage" href="https://blog.mubai.link/pdl/NodeJs/Vue/vue3%E6%9E%84%E5%BB%BA/">
+
+  <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="image" content="/images/avatar.jpg">
+    <meta itemprop="name" content="MuBai">
+    <meta itemprop="description" content="人生如逆旅, 我亦是行人, 随心笔录 & 知识存档">
+  </span>
+
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="源夢">
+  </span>
+
+  <div class="body md" itemprop="articleBody">
+    
+
+    <h1 id="vue项目构建"><a class="anchor" href="#vue项目构建">#</a> Vue 项目构建</h1>
+<p><strong>新建项目</strong></p>
+<figure class="highlight javascript"><figcaption data-lang="javascript"></figcaption><table><tr><td data-num="1"></td><td><pre># 安装</pre></td></tr><tr><td data-num="2"></td><td><pre>npm install <span class="token operator">-</span>g @vue<span class="token operator">/</span>cli</pre></td></tr><tr><td data-num="3"></td><td><pre># 新建项目</pre></td></tr><tr><td data-num="4"></td><td><pre>vue create my<span class="token operator">-</span>project</pre></td></tr><tr><td data-num="5"></td><td><pre># 项目启动</pre></td></tr><tr><td data-num="6"></td><td><pre>npm run serve</pre></td></tr><tr><td data-num="7"></td><td><pre># 打包</pre></td></tr><tr><td data-num="8"></td><td><pre>npm run build</pre></td></tr></table></figure><p>打包后的文件，对引用资源注入了预加载（preload/prefetch），启用 PWA 插件时注入 manifest/icon 链接，并且引入 (inlines) webpack runtime /chunk manifest 清单已获得最佳性能。</p>
+<p><strong>功能配置</strong></p>
+<p><strong>功能选择</strong></p>
+<p><img data-src="http://img.php.cn/upload/article/000/061/021/c8ea4482f80c953576f4a64f5cab819a-0.jpg" alt="img" /></p>
+<p>3.0 版本包括默认预设配置 和 用户自定义配置，在用户自定义配置之后，会询问是否保存当前的配置功能为将来的项目配置的预设值，这样下次可直接使用不需要再次配置。</p>
+<p>自定义功能配置包括以下功能：</p>
+<ol>
+<li>TypeScript</li>
+<li>Progressive Web App (PWA) Support</li>
+<li>Router</li>
+<li>Vuex</li>
+<li>CSS Pre-processors</li>
+<li>Linter / Formatter</li>
+<li>Unit Testing</li>
+<li>E2E Testing</li>
+</ol>
+<p>可以根据项目大小和功能体验配置不同的功能，空格键 选中 / 反选，按 a 键 全选 / 全不选，按 i 键反选已选择项， 上下键 上下移动选择。</p>
+<p><strong>功能细节配置</strong></p>
+<p><img data-src="http://img.php.cn/upload/article/000/061/021/0e6f93c751036a109cd0e7dc27b482fc-1.jpg" alt="img" /></p>
+<p>在选择功能后，会询问更细节的配置，</p>
+<p>TypeScript：</p>
+<ol>
+<li>是否使用 class 风格的组件语法：Use class-style component syntax?</li>
+<li>是否使用 babel 做转义：Use Babel alongside TypeScript for auto-detected polyfills?</li>
+</ol>
+<p>CSS Pre-processors：</p>
+<ol>
+<li>选择 CSS 预处理类型：Pick a CSS pre-processor</li>
+</ol>
+<p>Linter / Formatter</p>
+<ol>
+<li>选择 Linter / Formatter 规范类型：Pick a linter /formatter config</li>
+<li>选择 lint 方式，保存时检查 / 提交时检查：Pick additional lint features</li>
+</ol>
+<p>Testing</p>
+<ol>
+<li>选择 Unit 测试方式</li>
+<li>选择 E2E 测试方式</li>
+</ol>
+<p>选择 Babel, PostCSS, ESLint 等自定义配置的存放位置 Where do you prefer placing config for Babel, PostCSS, ESLint, etc.?</p>
+<p><strong>vue.config.js 自定义配置</strong></p>
+<p>vue.config.js 完整默认配置</p>
+<figure class="highlight javascript"><figcaption data-lang="javascript"></figcaption><table><tr><td data-num="1"></td><td><pre>module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="2"></td><td><pre> <span class="token comment">// 基本路径</span></pre></td></tr><tr><td data-num="3"></td><td><pre> <span class="token literal-property property">baseUrl</span><span class="token operator">:</span> <span class="token string">'/'</span><span class="token punctuation">,</span></pre></td></tr><tr><td data-num="4"></td><td><pre> <span class="token comment">// 输出文件目录</span></pre></td></tr><tr><td data-num="5"></td><td><pre> <span class="token literal-property property">outputDir</span><span class="token operator">:</span> <span class="token string">'dist'</span><span class="token punctuation">,</span></pre></td></tr><tr><td data-num="6"></td><td><pre> <span class="token comment">//eslint-loader 是否在保存的时候检查</span></pre></td></tr><tr><td data-num="7"></td><td><pre> <span class="token literal-property property">lintOnSave</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span></pre></td></tr><tr><td data-num="8"></td><td><pre> <span class="token comment">// use the full build with in-browser compiler?</span></pre></td></tr><tr><td data-num="9"></td><td><pre> <span class="token comment">// https://vuejs.org/v2/guide/installation.html#Runtime-Compiler-vs-Runtime-only</span></pre></td></tr><tr><td data-num="10"></td><td><pre> <span class="token literal-property property">compiler</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span></pre></td></tr><tr><td data-num="11"></td><td><pre> <span class="token comment">//webpack 配置</span></pre></td></tr><tr><td data-num="12"></td><td><pre> <span class="token comment">// see https://github.com/vuejs/vue-cli/blob/dev/docs/webpack.md</span></pre></td></tr><tr><td data-num="13"></td><td><pre> <span class="token function-variable function">chainWebpack</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span><span class="token punctuation">,</span></pre></td></tr><tr><td data-num="14"></td><td><pre> <span class="token function-variable function">configureWebpack</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span><span class="token punctuation">,</span></pre></td></tr><tr><td data-num="15"></td><td><pre> <span class="token comment">//vue-loader 配置项</span></pre></td></tr><tr><td data-num="16"></td><td><pre> <span class="token comment">// https://vue-loader.vuejs.org/en/options.html</span></pre></td></tr><tr><td data-num="17"></td><td><pre> <span class="token literal-property property">vueLoader</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span><span class="token punctuation">,</span></pre></td></tr><tr><td data-num="18"></td><td><pre> <span class="token comment">// 生产环境是否生成 sourceMap 文件</span></pre></td></tr><tr><td data-num="19"></td><td><pre> <span class="token literal-property property">productionSourceMap</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span></pre></td></tr><tr><td data-num="20"></td><td><pre> <span class="token comment">//css 相关配置</span></pre></td></tr><tr><td data-num="21"></td><td><pre> <span class="token literal-property property">css</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="22"></td><td><pre>  <span class="token comment">// 是否使用 css 分离插件 ExtractTextPlugin</span></pre></td></tr><tr><td data-num="23"></td><td><pre>  <span class="token literal-property property">extract</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span></pre></td></tr><tr><td data-num="24"></td><td><pre>  <span class="token comment">// 开启 CSS source maps?</span></pre></td></tr><tr><td data-num="25"></td><td><pre>  <span class="token literal-property property">sourceMap</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span></pre></td></tr><tr><td data-num="26"></td><td><pre>  <span class="token comment">//css 预设器配置项</span></pre></td></tr><tr><td data-num="27"></td><td><pre>  <span class="token literal-property property">loaderOptions</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span><span class="token punctuation">,</span></pre></td></tr><tr><td data-num="28"></td><td><pre>  <span class="token comment">// 启用 CSS modules for all css /pre-processor files.</span></pre></td></tr><tr><td data-num="29"></td><td><pre>  <span class="token literal-property property">modules</span><span class="token operator">:</span> <span class="token boolean">false</span></pre></td></tr><tr><td data-num="30"></td><td><pre> <span class="token punctuation">&#125;</span><span class="token punctuation">,</span></pre></td></tr><tr><td data-num="31"></td><td><pre> <span class="token comment">// use thread-loader for babel &amp; TS in production build</span></pre></td></tr><tr><td data-num="32"></td><td><pre> <span class="token comment">// enabled by default if the machine has more than 1 cores</span></pre></td></tr><tr><td data-num="33"></td><td><pre> <span class="token literal-property property">parallel</span><span class="token operator">:</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'os'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">cpus</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>length <span class="token operator">></span> <span class="token number">1</span><span class="token punctuation">,</span></pre></td></tr><tr><td data-num="34"></td><td><pre> <span class="token comment">// 是否启用 dll</span></pre></td></tr><tr><td data-num="35"></td><td><pre> <span class="token comment">// See https://github.com/vuejs/vue-cli/blob/dev/docs/cli-service.md#dll-mode</span></pre></td></tr><tr><td data-num="36"></td><td><pre> <span class="token literal-property property">dll</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span></pre></td></tr><tr><td data-num="37"></td><td><pre> <span class="token comment">// PWA 插件相关配置</span></pre></td></tr><tr><td data-num="38"></td><td><pre> <span class="token comment">// see https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-pwa</span></pre></td></tr><tr><td data-num="39"></td><td><pre> <span class="token literal-property property">pwa</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span><span class="token punctuation">,</span></pre></td></tr><tr><td data-num="40"></td><td><pre> <span class="token comment">//webpack-dev-server 相关配置</span></pre></td></tr><tr><td data-num="41"></td><td><pre> <span class="token literal-property property">devServer</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="42"></td><td><pre>  <span class="token literal-property property">open</span><span class="token operator">:</span> process<span class="token punctuation">.</span>platform <span class="token operator">===</span> <span class="token string">'darwin'</span><span class="token punctuation">,</span></pre></td></tr><tr><td data-num="43"></td><td><pre>  <span class="token literal-property property">host</span><span class="token operator">:</span> <span class="token string">'0.0.0.0'</span><span class="token punctuation">,</span></pre></td></tr><tr><td data-num="44"></td><td><pre>  <span class="token literal-property property">port</span><span class="token operator">:</span> <span class="token number">8080</span><span class="token punctuation">,</span></pre></td></tr><tr><td data-num="45"></td><td><pre>  <span class="token literal-property property">https</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span></pre></td></tr><tr><td data-num="46"></td><td><pre>  <span class="token literal-property property">hotOnly</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span></pre></td></tr><tr><td data-num="47"></td><td><pre>  <span class="token literal-property property">proxy</span><span class="token operator">:</span> <span class="token keyword">null</span><span class="token punctuation">,</span> <span class="token comment">// 设置代理</span></pre></td></tr><tr><td data-num="48"></td><td><pre>  <span class="token function-variable function">before</span><span class="token operator">:</span> <span class="token parameter">app</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span></pre></td></tr><tr><td data-num="49"></td><td><pre> <span class="token punctuation">&#125;</span><span class="token punctuation">,</span></pre></td></tr><tr><td data-num="50"></td><td><pre> <span class="token comment">// 第三方插件配置</span></pre></td></tr><tr><td data-num="51"></td><td><pre> <span class="token literal-property property">pluginOptions</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="52"></td><td><pre>  <span class="token comment">// ...</span></pre></td></tr><tr><td data-num="53"></td><td><pre> <span class="token punctuation">&#125;</span></pre></td></tr><tr><td data-num="54"></td><td><pre><span class="token punctuation">&#125;</span></pre></td></tr></table></figure><p>设置代理</p>
+<figure class="highlight javascript"><figcaption data-lang="javascript"></figcaption><table><tr><td data-num="1"></td><td><pre># string</pre></td></tr><tr><td data-num="2"></td><td><pre>module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="3"></td><td><pre> <span class="token literal-property property">devServer</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="4"></td><td><pre>  <span class="token literal-property property">proxy</span><span class="token operator">:</span> <span class="token string">'&lt;url>'</span></pre></td></tr><tr><td data-num="5"></td><td><pre> <span class="token punctuation">&#125;</span></pre></td></tr><tr><td data-num="6"></td><td><pre><span class="token punctuation">&#125;</span></pre></td></tr><tr><td data-num="7"></td><td><pre># Object</pre></td></tr><tr><td data-num="8"></td><td><pre>module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="9"></td><td><pre> <span class="token literal-property property">devServer</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="10"></td><td><pre>  <span class="token literal-property property">proxy</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="11"></td><td><pre>   <span class="token string-property property">'/api'</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="12"></td><td><pre>    <span class="token literal-property property">target</span><span class="token operator">:</span> <span class="token string">'&lt;url>'</span><span class="token punctuation">,</span></pre></td></tr><tr><td data-num="13"></td><td><pre>    <span class="token literal-property property">ws</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span></pre></td></tr><tr><td data-num="14"></td><td><pre>    <span class="token literal-property property">changeOrigin</span><span class="token operator">:</span> <span class="token boolean">true</span></pre></td></tr><tr><td data-num="15"></td><td><pre>   <span class="token punctuation">&#125;</span><span class="token punctuation">,</span></pre></td></tr><tr><td data-num="16"></td><td><pre>   <span class="token string-property property">'/foo'</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="17"></td><td><pre>    <span class="token literal-property property">target</span><span class="token operator">:</span> <span class="token string">'&lt;other_url>'</span></pre></td></tr><tr><td data-num="18"></td><td><pre>   <span class="token punctuation">&#125;</span></pre></td></tr><tr><td data-num="19"></td><td><pre>  <span class="token punctuation">&#125;</span></pre></td></tr><tr><td data-num="20"></td><td><pre> <span class="token punctuation">&#125;</span></pre></td></tr><tr><td data-num="21"></td><td><pre><span class="token punctuation">&#125;</span></pre></td></tr></table></figure><p><strong>启用 dll</strong></p>
+<p>启用 dll 后，我们的动态库文件每次打包生成的 vendor 的 [chunkhash] 值就会一样，其值可以是 true/false, 也可以制定特定的代码库。</p>
+<figure class="highlight javascript"><figcaption data-lang="javascript"></figcaption><table><tr><td data-num="1"></td><td><pre>module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="2"></td><td><pre> <span class="token literal-property property">dll</span><span class="token operator">:</span> <span class="token boolean">true</span></pre></td></tr><tr><td data-num="3"></td><td><pre><span class="token punctuation">&#125;</span></pre></td></tr><tr><td data-num="4"></td><td><pre>module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="5"></td><td><pre> <span class="token literal-property property">dll</span><span class="token operator">:</span> <span class="token punctuation">[</span></pre></td></tr><tr><td data-num="6"></td><td><pre>  <span class="token string">'dep-a'</span><span class="token punctuation">,</span></pre></td></tr><tr><td data-num="7"></td><td><pre>  <span class="token string">'dep-b/some/nested/file.js'</span></pre></td></tr><tr><td data-num="8"></td><td><pre> <span class="token punctuation">]</span></pre></td></tr><tr><td data-num="9"></td><td><pre><span class="token punctuation">&#125;</span></pre></td></tr></table></figure><p><strong>静态资源路径</strong></p>
+<p>相对路径</p>
+<ol>
+<li>静态资源路径以 @ 开头代表 &lt;projectRoot&gt;/src</li>
+<li>静态资源路径以～开头，可以引入 node modules 内的资源</li>
+</ol>
+<p>public 文件夹里的静态资源引用</p>
+<figure class="highlight javascript"><figcaption data-lang="javascript"></figcaption><table><tr><td data-num="1"></td><td><pre># 在 <span class="token keyword">public</span><span class="token operator">/</span>index<span class="token punctuation">.</span>html中引用静态资源</pre></td></tr><tr><td data-num="2"></td><td><pre><span class="token operator">&lt;</span><span class="token operator">%=</span> webpackConfig<span class="token punctuation">.</span>output<span class="token punctuation">.</span>publicPath <span class="token operator">%</span><span class="token operator">></span></pre></td></tr><tr><td data-num="3"></td><td><pre><span class="token operator">&lt;</span>link rel<span class="token operator">=</span><span class="token string">"shortcut icon"</span> href<span class="token operator">=</span><span class="token string">"&lt;%= webpackConfig.output.publicPath %>favicon.ico"</span> rel<span class="token operator">=</span><span class="token string">"external nofollow"</span> <span class="token operator">></span></pre></td></tr><tr><td data-num="4"></td><td><pre># vue templates中，需要在data中定义baseUrl</pre></td></tr><tr><td data-num="5"></td><td><pre><span class="token operator">&lt;</span>template<span class="token operator">></span></pre></td></tr><tr><td data-num="6"></td><td><pre> <span class="token operator">&lt;</span>img <span class="token operator">:</span>src<span class="token operator">=</span><span class="token string">"`$&#123;baseUrl&#125;my-image.png`"</span><span class="token operator">></span></pre></td></tr><tr><td data-num="7"></td><td><pre><span class="token operator">&lt;</span><span class="token operator">/</span>template<span class="token operator">></span></pre></td></tr><tr><td data-num="8"></td><td><pre><span class="token operator">&lt;</span>script<span class="token operator">></span></pre></td></tr><tr><td data-num="9"></td><td><pre> <span class="token function">data</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="10"></td><td><pre>  <span class="token keyword">return</span> <span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="11"></td><td><pre>   <span class="token literal-property property">baseUrl</span><span class="token operator">:</span> process<span class="token punctuation">.</span>env<span class="token punctuation">.</span><span class="token constant">BASE_URL</span></pre></td></tr><tr><td data-num="12"></td><td><pre>  <span class="token punctuation">&#125;</span></pre></td></tr><tr><td data-num="13"></td><td><pre> <span class="token punctuation">&#125;</span></pre></td></tr><tr><td data-num="14"></td><td><pre><span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">></span></pre></td></tr></table></figure><p><strong>webpack 配置修改</strong></p>
+<p>用 webpack-chain 修改 webpack 相关配置，强烈建议先熟悉 webpack-chain 和 vue-cli 源码，以便更好地理解这个选项的配置项。</p>
+<p>对模块处理配置</p>
+<figure class="highlight javascript"><figcaption data-lang="javascript"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token comment">// vue.config.js</span></pre></td></tr><tr><td data-num="2"></td><td><pre>module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="3"></td><td><pre> <span class="token function-variable function">chainWebpack</span><span class="token operator">:</span> <span class="token parameter">config</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="4"></td><td><pre>  config<span class="token punctuation">.</span>module</pre></td></tr><tr><td data-num="5"></td><td><pre>   <span class="token punctuation">.</span><span class="token function">rule</span><span class="token punctuation">(</span><span class="token string">'js'</span><span class="token punctuation">)</span></pre></td></tr><tr><td data-num="6"></td><td><pre>    <span class="token punctuation">.</span>include</pre></td></tr><tr><td data-num="7"></td><td><pre>     <span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">some-module-to-transpile</span><span class="token regex-delimiter">/</span></span><span class="token punctuation">)</span> <span class="token comment">// 要处理的模块</span></pre></td></tr><tr><td data-num="8"></td><td><pre> <span class="token punctuation">&#125;</span></pre></td></tr><tr><td data-num="9"></td><td><pre><span class="token punctuation">&#125;</span></pre></td></tr></table></figure><p>修改 webpack Loader 配置</p>
+<figure class="highlight javascript"><figcaption data-lang="javascript"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token comment">// vue.config.js</span></pre></td></tr><tr><td data-num="2"></td><td><pre>module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="3"></td><td><pre> <span class="token function-variable function">chainWebpack</span><span class="token operator">:</span> <span class="token parameter">config</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="4"></td><td><pre>  config<span class="token punctuation">.</span>module</pre></td></tr><tr><td data-num="5"></td><td><pre>   <span class="token punctuation">.</span><span class="token function">rule</span><span class="token punctuation">(</span><span class="token string">'scss'</span><span class="token punctuation">)</span></pre></td></tr><tr><td data-num="6"></td><td><pre>   <span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span><span class="token string">'sass-loader'</span><span class="token punctuation">)</span></pre></td></tr><tr><td data-num="7"></td><td><pre>   <span class="token punctuation">.</span><span class="token function">tap</span><span class="token punctuation">(</span><span class="token parameter">options</span> <span class="token operator">=></span></pre></td></tr><tr><td data-num="8"></td><td><pre>    <span class="token function">merge</span><span class="token punctuation">(</span>options<span class="token punctuation">,</span> <span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="9"></td><td><pre>     <span class="token literal-property property">includePaths</span><span class="token operator">:</span> <span class="token punctuation">[</span>path<span class="token punctuation">.</span><span class="token function">resolve</span><span class="token punctuation">(</span>dirname<span class="token punctuation">,</span> <span class="token string">'node_modules'</span><span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token punctuation">,</span></pre></td></tr><tr><td data-num="10"></td><td><pre>    <span class="token punctuation">&#125;</span><span class="token punctuation">)</span></pre></td></tr><tr><td data-num="11"></td><td><pre>   <span class="token punctuation">)</span></pre></td></tr><tr><td data-num="12"></td><td><pre> <span class="token punctuation">&#125;</span></pre></td></tr><tr><td data-num="13"></td><td><pre><span class="token punctuation">&#125;</span></pre></td></tr></table></figure><p>修改 webpack Plugin 配置</p>
+<figure class="highlight javascript"><figcaption data-lang="javascript"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token comment">// vue.config.js</span></pre></td></tr><tr><td data-num="2"></td><td><pre>module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="3"></td><td><pre> <span class="token function-variable function">chainWebpack</span><span class="token operator">:</span> <span class="token parameter">config</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="4"></td><td><pre>  config</pre></td></tr><tr><td data-num="5"></td><td><pre>   <span class="token punctuation">.</span><span class="token function">plugin</span><span class="token punctuation">(</span><span class="token string">'html'</span><span class="token punctuation">)</span></pre></td></tr><tr><td data-num="6"></td><td><pre>   <span class="token punctuation">.</span><span class="token function">tap</span><span class="token punctuation">(</span><span class="token parameter">args</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="7"></td><td><pre>    <span class="token keyword">return</span> <span class="token punctuation">[</span><span class="token comment">/* new args to pass to html-webpack-plugin's constructor */</span><span class="token punctuation">]</span></pre></td></tr><tr><td data-num="8"></td><td><pre>   <span class="token punctuation">&#125;</span><span class="token punctuation">)</span></pre></td></tr><tr><td data-num="9"></td><td><pre> <span class="token punctuation">&#125;</span></pre></td></tr><tr><td data-num="10"></td><td><pre><span class="token punctuation">&#125;</span></pre></td></tr></table></figure><p>eg: 在本次项目较小，只对 uglifyjs 进行了少量的修改，后期如果还有配置上优化会继续添加。</p>
+<figure class="highlight javascript"><figcaption data-lang="javascript"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token function-variable function">chainWebpack</span><span class="token operator">:</span> <span class="token parameter">config</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="2"></td><td><pre>  <span class="token keyword">if</span> <span class="token punctuation">(</span>process<span class="token punctuation">.</span>env<span class="token punctuation">.</span><span class="token constant">NODE_ENV</span> <span class="token operator">===</span> <span class="token string">'production'</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="3"></td><td><pre>    config</pre></td></tr><tr><td data-num="4"></td><td><pre>      <span class="token punctuation">.</span><span class="token function">plugin</span><span class="token punctuation">(</span><span class="token string">'uglify'</span><span class="token punctuation">)</span></pre></td></tr><tr><td data-num="5"></td><td><pre>      <span class="token punctuation">.</span><span class="token function">tap</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter"><span class="token punctuation">[</span>options<span class="token punctuation">]</span></span><span class="token punctuation">)</span> <span class="token operator">=></span><span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="6"></td><td><pre>        <span class="token comment">// 去除 console.log</span></pre></td></tr><tr><td data-num="7"></td><td><pre>        <span class="token keyword">return</span> <span class="token punctuation">[</span>Object<span class="token punctuation">.</span><span class="token function">assign</span><span class="token punctuation">(</span>options<span class="token punctuation">,</span> <span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="8"></td><td><pre>          <span class="token literal-property property">uglifyOptions</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span> <span class="token literal-property property">compress</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="9"></td><td><pre>            <span class="token literal-property property">drop_console</span> <span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span></pre></td></tr><tr><td data-num="10"></td><td><pre>            <span class="token literal-property property">pure_funcs</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">'console.log'</span><span class="token punctuation">]</span></pre></td></tr><tr><td data-num="11"></td><td><pre>          <span class="token punctuation">&#125;</span><span class="token punctuation">&#125;</span></pre></td></tr><tr><td data-num="12"></td><td><pre>        <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">]</span></pre></td></tr><tr><td data-num="13"></td><td><pre>      <span class="token punctuation">&#125;</span><span class="token punctuation">)</span></pre></td></tr><tr><td data-num="14"></td><td><pre>  <span class="token punctuation">&#125;</span></pre></td></tr><tr><td data-num="15"></td><td><pre><span class="token punctuation">&#125;</span></pre></td></tr></table></figure><p><strong>全局变量的设置</strong></p>
+<p>在项目根目录创建以下项目：</p>
+<figure class="highlight javascript"><figcaption data-lang="javascript"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token punctuation">.</span>env        # 在所有环节中执行</pre></td></tr><tr><td data-num="2"></td><td><pre><span class="token punctuation">.</span>env<span class="token punctuation">.</span>local     # 在所有环境中执行，git会ignored</pre></td></tr><tr><td data-num="3"></td><td><pre><span class="token punctuation">.</span>env<span class="token punctuation">.</span><span class="token punctuation">[</span>mode<span class="token punctuation">]</span>     # <span class="token function">只在特定环境执行</span><span class="token punctuation">(</span> <span class="token punctuation">[</span>mode<span class="token punctuation">]</span> 可以是 <span class="token string">"development"</span><span class="token punctuation">,</span> <span class="token string">"production"</span> or <span class="token string">"test"</span> <span class="token punctuation">)</span></pre></td></tr><tr><td data-num="4"></td><td><pre><span class="token punctuation">.</span>env<span class="token punctuation">.</span><span class="token punctuation">[</span>mode<span class="token punctuation">]</span><span class="token punctuation">.</span>local  # 在特定环境执行<span class="token punctuation">,</span> git会ignored</pre></td></tr><tr><td data-num="5"></td><td><pre><span class="token punctuation">.</span>env<span class="token punctuation">.</span>development  # 只在生产环境执行</pre></td></tr><tr><td data-num="6"></td><td><pre><span class="token punctuation">.</span>env<span class="token punctuation">.</span>production   # 只在开发环境执行</pre></td></tr></table></figure><p>在文件里配置键值对：</p>
+<figure class="highlight javascript"><figcaption data-lang="javascript"></figcaption><table><tr><td data-num="1"></td><td><pre># 键名须以<span class="token constant">VUE_APP</span>开头</pre></td></tr><tr><td data-num="2"></td><td><pre><span class="token constant">VUE_APP_SECRET</span><span class="token operator">=</span>secret</pre></td></tr></table></figure><p>在项目中访问：</p>
+<figure class="highlight javascript"><figcaption data-lang="javascript"></figcaption><table><tr><td data-num="1"></td><td><pre>console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>process<span class="token punctuation">.</span>env<span class="token punctuation">.</span><span class="token constant">VUE_APP_SECRET</span><span class="token punctuation">)</span></pre></td></tr></table></figure>
+      <div class="tags">
+          <a href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" rel="tag"><i class="ic i-tag"></i> 学习笔记</a>
+          <a href="/tags/vue/" rel="tag"><i class="ic i-tag"></i> vue</a>
+      </div>
+  </div>
+
+   <footer>
+
+    <div class="meta">
+  <span class="item">
+    <span class="icon">
+      <i class="ic i-calendar-check"></i>
+    </span>
+    <span class="text">更新于</span>
+    <time title="修改时间：2026-03-19 21:59:08" itemprop="dateModified" datetime="2026-03-19T21:59:08+08:00">2026-03-19</time>
+  </span>
+  
+  <span class="item" data-path="/pdl/NodeJs/Vue/vue3构建/" title="阅读次数">
+        <i class="ic i-eye"></i>
+      </span>
+      <span class="text">阅读次数</span>
+      <span class="waline-pageview-count"></span>
+      <span class="text">次</span>
+  </span>
+</div>
+
+      
+
+<div id="copyright">
+<ul>
+  <li class="author">
+    <strong>本文作者： </strong>MuBai <i class="ic i-at"><em>@</em></i>源夢
+  </li>
+  <li class="link">
+    <strong>本文链接：</strong>
+    <a href="https://blog.mubai.link/pdl/NodeJs/Vue/vue3%E6%9E%84%E5%BB%BA/" title="Vue项目构建">https://blog.mubai.link/pdl/NodeJs/Vue/vue3构建/</a>
+  </li>
+  <li class="license">
+    <strong>版权声明： </strong>本站所有文章除特别声明外，均采用 <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC9kZWVkLnpo"><i class="ic i-creative-commons"><em>(CC)</em></i>BY-NC-SA</span> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+  </footer>
+
+</article>
+
+  </div>
+  
+
+<div class="post-nav">
+    <div class="item left">
+      
+
+  <a href="/pdl/NodeJs/Vue/vite/" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;www.loliapi.com&#x2F;acg&#x2F;?48772" title="Vite入门">
+  <span class="type">上一篇</span>
+  <span class="category"><i class="ic i-flag"></i> Vue</span>
+  <h3>Vite入门</h3>
+  </a>
+
+    </div>
+    <div class="item right">
+      
+
+  <a href="/pdl/NodeJs/Vue/Axios/" itemprop="url" rel="next" data-background-image="https:&#x2F;&#x2F;www.loliapi.com&#x2F;acg&#x2F;?743226" title="Axios用法及配置">
+  <span class="type">下一篇</span>
+  <span class="category"><i class="ic i-flag"></i> 编程</span>
+  <h3>Axios用法及配置</h3>
+  </a>
+
+    </div>
+</div>
+
+  
+  <div class="wrap" id="comments">
+      <div id="waline-comment"></div>
+  </div>
+
+
+        </div>
+        <div id="sidebar">
+          
+
+<div class="inner">
+
+  <div class="panels">
+    <div class="inner">
+      <div class="contents panel pjax" data-title="文章目录">
+          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#vue%E9%A1%B9%E7%9B%AE%E6%9E%84%E5%BB%BA"><span class="toc-number">1.</span> <span class="toc-text"> Vue 项目构建</span></a></li></ol>
+      </div>
+      <div class="related panel pjax" data-title="系列文章">
+        <ul>
+          <li class="active"><a href="/pdl/NodeJs/Vue/vue3%E6%9E%84%E5%BB%BA/" rel="bookmark" title="Vue项目构建">Vue项目构建</a></li><li><a href="/pdl/NodeJs/Vue/vite/" rel="bookmark" title="Vite入门">Vite入门</a></li><li><a href="/pdl/NodeJs/Vue/vue3/" rel="bookmark" title="Vue3语法变化">Vue3语法变化</a></li><li><a href="/pdl/NodeJs/Vue/%E5%89%8D%E7%AB%AF%E6%96%87%E6%A1%A3/" rel="bookmark" title="前端常用API">前端常用API</a></li>
+        </ul>
+      </div>
+      <div class="overview panel" data-title="站点概览">
+        <div class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <img class="image" itemprop="image" alt="MuBai"
+      data-src="/images/avatar.jpg">
+  <p class="name" itemprop="name">MuBai</p>
+  <div class="description" itemprop="description">随心笔录 & 知识存档</div>
+</div>
+
+<nav class="state">
+    <div class="item posts">
+      <a href="/archives/">
+        <span class="count">25</span>
+        <span class="name">文章</span>
+      </a>
+    </div>
+    <div class="item categories">
+      <a href="/categories/">
+        <span class="count">17</span>
+        <span class="name">分类</span>
+      </a>
+    </div>
+    <div class="item tags">
+      <a href="/tags/">
+        <span class="count">16</span>
+        <span class="name">标签</span>
+      </a>
+    </div>
+</nav>
+
+<div class="social">
+      <span class="exturl item github" data-url="aHR0cHM6Ly9naXRodWIuY29tL1Byb3VkTXVCYWk=" title="https:&#x2F;&#x2F;github.com&#x2F;ProudMuBai"><i class="ic i-github"></i></span>
+      <span class="exturl item twitter" data-url="aHR0cHM6Ly94LmNvbS9NdUJhaWVtbQ==" title="https:&#x2F;&#x2F;x.com&#x2F;MuBaiemm"><i class="ic i-twitter"></i></span>
+      <span class="exturl item telegram" data-url="aHR0cHM6Ly90Lm1lL011QmFpQ3M=" title="https:&#x2F;&#x2F;t.me&#x2F;MuBaiCs"><i class="ic i-telegram"></i></span>
+</div>
+
+<ul class="menu">
+  
+    
+  <li class="item">
+    <a href="/" rel="section"><i class="ic i-home"></i>首页</a>
+  </li>
+
+        
+  <li class="item dropdown">
+      <a href="javascript:void(0);"><i class="ic i-feather"></i>文章</a>
+    <ul class="submenu">
+
+        
+  <li class="item">
+    <a href="/archives/" rel="section"><i class="ic i-list-alt"></i>归档</a>
+  </li>
+
+        
+  <li class="item">
+    <a href="/categories/" rel="section"><i class="ic i-th"></i>分类</a>
+  </li>
+
+        
+  <li class="item">
+    <a href="/tags/" rel="section"><i class="ic i-tags"></i>标签</a>
+  </li>
+
+  </ul>
+    
+  <li class="item">
+    <a href="/vestige/about/Summary/" rel="section"><i class="ic i-user"></i>关于</a>
+  </li>
+
+    
+  <li class="item">
+    <a href="/resource/links/friends/" rel="section"><i class="ic i-heart"></i>友链</a>
+  </li>
+
+    
+  <li class="item">
+    <a href="/resource/links/resource-navigation/" rel="section"><i class="ic i-magic"></i>工具</a>
+  </li>
+
+
+</ul>
+
+      </div>
+    </div>
+  </div>
+
+  <ul id="quick">
+    <li class="prev pjax">
+        <a href="/pdl/NodeJs/Vue/vite/" rel="prev" title="上一篇"><i class="ic i-chevron-left"></i></a>
+    </li>
+    <li class="up"><i class="ic i-arrow-up"></i></li>
+    <li class="down"><i class="ic i-arrow-down"></i></li>
+    <li class="next pjax">
+        <a href="/pdl/NodeJs/Vue/Axios/" rel="next" title="下一篇"><i class="ic i-chevron-right"></i></a>
+    </li>
+    <li class="percent"></li>
+  </ul>
+</div>
+
+
+        </div>
+        <div class="dimmer"></div>
+      </div>
+    </main>
+    <footer id="footer">
+      <div class="inner">
+        <div class="widgets">
+          
+<div class="rpost pjax">
+  <h2>随机文章</h2>
+  <ul>
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/resource/" title="分类于 资源">资源</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/resource/links/" title="分类于 links">links</a>
+</div>
+
+    <span><a href="/resource/links/friends/" title="友情链接">友情链接</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/pdl/" title="分类于 编程">编程</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/pdl/NodeJS/" title="分类于 NodeJS">NodeJS</a>
+</div>
+
+    <span><a href="/pdl/NodeJs/Node/NodeConfig/" title="NodeJS配置">NodeJS配置</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/pdl/" title="分类于 编程">编程</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/pdl/Vue/" title="分类于 Vue">Vue</a>
+</div>
+
+    <span><a href="/pdl/NodeJs/Vue/vite/" title="Vite入门">Vite入门</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/procedure/" title="分类于 程序">程序</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/procedure/MySQL/" title="分类于 MySQL">MySQL</a>
+</div>
+
+    <span><a href="/procedure/frames/others/mysql/NodeQuerySQL/" title="Sql 记录">Sql 记录</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/procedure/" title="分类于 程序">程序</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/procedure/hexo/" title="分类于 hexo">hexo</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/procedure/hexo/Theme-Shoka-Documentation/" title="分类于 Theme Shoka Documentation">Theme Shoka Documentation</a>
+</div>
+
+    <span><a href="/procedure/application/hexo/shoka/config/" title="Step.2 基本配置">Step.2 基本配置</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/pdl/" title="分类于 编程">编程</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/pdl/GoLang/" title="分类于 GoLang">GoLang</a>
+</div>
+
+    <span><a href="/pdl/GoLang/GoLang%E5%9F%BA%E7%A1%80%E6%8B%93%E5%B1%95/" title="GoLang冷知识">GoLang冷知识</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/procedure/" title="分类于 程序">程序</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/procedure/Git/" title="分类于 Git">Git</a>
+</div>
+
+    <span><a href="/procedure/frames/git/Git/" title="Git常用指令">Git常用指令</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/pdl/" title="分类于 编程">编程</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/pdl/GoLang/" title="分类于 GoLang">GoLang</a>
+</div>
+
+    <span><a href="/pdl/GoLang/GoLang%E6%8B%93%E5%B1%95/" title="GoLang入门笔记(下)">GoLang入门笔记(下)</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/procedure/" title="分类于 程序">程序</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/procedure/hexo/" title="分类于 hexo">hexo</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/procedure/hexo/Theme-Shoka-Documentation/" title="分类于 Theme Shoka Documentation">Theme Shoka Documentation</a>
+</div>
+
+    <span><a href="/procedure/application/hexo/shoka/special/" title="Step.4 主题特殊功能">Step.4 主题特殊功能</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/pdl/" title="分类于 编程">编程</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/pdl/React/" title="分类于 React">React</a>
+</div>
+
+    <span><a href="/pdl/NodeJs/React/React%E5%85%A5%E9%97%A8%E7%AF%87/" title="React入门篇">React入门篇</a></span>
+  </li>
+
+  </ul>
+</div>
+<div>
+  <h2>最新评论</h2>
+  <ul id="waline-recent"></ul>
+</div>
+
+        </div>
+        <div class="status">
+  <div class="copyright">
+    
+    &copy; 
+    <span itemprop="copyrightYear">2026</span>
+    <span class="with-love">
+      <i class="ic i-sakura rotate"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">MuBai @ MuBai Boat</span>
+  </div>
+  <div class="count">
+    <span class="post-meta-item-icon">
+      <i class="ic i-chart-area"></i>
+    </span>
+    <span title="站点总字数">311k 字</span>
+
+    <span class="post-meta-item-icon">
+      <i class="ic i-coffee"></i>
+    </span>
+    <span title="站点阅读时长">4:43</span>
+  </div>
+</div>
+
+      </div>
+    </footer>
+  </div>
+<script data-config type="text/javascript">
+  var LOCAL = {
+    path: 'pdl/NodeJs/Vue/vue3构建/',
+    favicon: {
+      show: "(*^▽^*)",
+      hide: "o(╥﹏╥)o"
+    },
+    search : {
+      placeholder: "文章搜索",
+      empty: "关于 「 ${query} 」，什么也没搜到",
+      stats: "${time} ms 内找到 ${hits} 条结果"
+    },
+    waline: true,fancybox: true,
+    copyright: '复制成功，转载请遵守 <i class="ic i-creative-commons"></i>BY-NC-SA 协议。',
+    ignores : [
+      function(uri) {
+        return uri.includes('#');
+      },
+      function(uri) {
+        return new RegExp(LOCAL.path+"$").test(uri);
+      }
+    ]
+  };
+</script>
+
+
+<script src="//cdn.jsdelivr.net/combine/npm/pace-js@1.0.2/pace.min.js,npm/pjax@0.2.8/pjax.min.js,npm/whatwg-fetch@3.4.0/dist/fetch.umd.min.js,npm/animejs@3.2.0/lib/anime.min.js,npm/algoliasearch@4/dist/algoliasearch-lite.umd.js,npm/instantsearch.js@4/dist/instantsearch.production.min.js,npm/lozad@1/dist/lozad.min.js,npm/quicklink@2/dist/quicklink.umd.js"></script>
+
+<script src="/js/app.js?v=0.2.5"></script>
+
+
+
+
+</body>
+</html>
