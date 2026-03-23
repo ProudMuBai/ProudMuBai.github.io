@@ -1,4 +1,4 @@
-var CONFIG = {"version":"0.2.5","hostname":"https://blog.mubai.link","root":"/","statics":"/","favicon":{"normal":"images/favicon.ico","hidden":"images/failure.ico"},"darkmode":false,"auto_scroll":true,"js":{"waline":"npm/@waline/client@v3/dist/waline.umd.min.js","chart":"npm/frappe-charts@1.5.0/dist/frappe-charts.min.iife.min.js","copy_tex":"npm/katex@0.12.0/dist/contrib/copy-tex.min.js","fancybox":"combine/npm/jquery@3.5.1/dist/jquery.min.js,npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js,npm/justifiedGallery@3.8.1/dist/js/jquery.justifiedGallery.min.js"},"css":{"waline_crop":"css/comment.css","waline":"combine/npm/@waline/client@v3/dist/waline.min.css,npm/@waline/client@v3/dist/waline-meta.min.css","katex":"npm/katex@0.12.0/dist/katex.min.css","mermaid":"css/mermaid.css","fancybox":"combine/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css,npm/justifiedGallery@3.8.1/dist/css/justifiedGallery.min.css"},"loader":{"start":true,"switch":false},"search":{"appID":"L73FZPIXV1","apiKey":"4b7a84e266d3b6d5a86d468846b59b2b","indexName":"boat","hits":{"per_page":10}},"waline":{"serverURL":"https://waline.mubai.link","comment":true,"pageview":true,"lang":"zh-CN","dark":"auto","commentSorting":"latest","login":"disable","wordLimit":[0,1500],"pageSize":10,"imageUploader":false,"highlighter":true,"texRenderer":false,"search":false,"noCopyright":true,"recaptchaV3Key":false,"turnstileKey":false,"reaction":false,"meta":["nick","mail","link"],"requiredMeta":["nick","mail"],"locale":{"placeholder":"1. 提问前请先仔细阅读本文档⚡\n2. 页面显示问题💥，请提供控制台截图📸或者您的测试网址\n3. 其他任何报错💣，请提供详细描述或截图📸，祝食用愉快💪"},"emoji":["https://unpkg.com/@waline/emojis@1.4.0/alus","https://unpkg.com/@waline/emojis@1.4.0/bilibili","https://unpkg.com/@waline/emojis@1.4.0/qq","https://unpkg.com/@waline/emojis@1.4.0/tw-emoji"]},"quicklink":{"timeout":2000,"priority":true},"audio":[{"title":"WY","list":["https://music.163.com/#/playlist?id=17822822368","https://music.163.com/#/playlist?id=17822887380","https://music.163.com/#/playlist?id=14304428642","https://music.163.com/#/playlist?id=9485652201"]},{"title":"QQ","list":["https://y.qq.com/n/yqq/playsquare/9653969987.html","https://y.qq.com/n/yqq/playsquare/9657346386.html","https://y.qq.com/n/ryqq/playlist/7994687559.html","https://y.qq.com/n/yqq/playsquare/3535982902.html"]}],"fireworks":["rgba(255,182,185,.9)","rgba(250,227,217,.9)","rgba(187,222,214,.9)","rgba(138,198,209,.9)"]};const getRndInteger = function (min, max) {
+var CONFIG = {"version":"0.2.5","hostname":"https://blog.mubai.link","root":"/","statics":"/","favicon":{"normal":"images/favicon.ico","hidden":"images/failure.ico"},"darkmode":false,"auto_scroll":true,"js":{"waline":"unpkg.com/@waline/client@v3/dist/waline.umd.js","chart":"unpkg.com/frappe-charts@1.5.0/dist/frappe-charts.min.iife.min.js","copy_tex":"unpkg.com/katex@0.12.0/dist/contrib/copy-tex.min.js","fancybox":"combine/npm/jquery@3.5.1/dist/jquery.min.js,npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js,npm/justifiedGallery@3.8.1/dist/js/jquery.justifiedGallery.min.js"},"css":{"waline_crop":"css/comment.css","waline":"combine/npm/@waline/client@v3/dist/waline.min.css,npm/@waline/client@v3/dist/waline-meta.min.css","katex":"npm/katex@0.12.0/dist/katex.min.css","mermaid":"css/mermaid.css","fancybox":"combine/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css,npm/justifiedGallery@3.8.1/dist/css/justifiedGallery.min.css"},"loader":{"start":true,"switch":false},"search":{"appID":"L73FZPIXV1","apiKey":"4b7a84e266d3b6d5a86d468846b59b2b","indexName":"boat","hits":{"per_page":10}},"waline":{"serverURL":"https://waline.mubai.link","comment":true,"pageview":true,"lang":"zh-CN","dark":"auto","commentSorting":"latest","login":"disable","wordLimit":[0,1500],"pageSize":10,"imageUploader":false,"highlighter":true,"texRenderer":false,"search":false,"noCopyright":true,"recaptchaV3Key":false,"turnstileKey":false,"reaction":false,"meta":["nick","mail","link"],"requiredMeta":["nick","mail"],"locale":{"placeholder":"1. 提问前请先仔细阅读本文档⚡\n2. 页面显示问题💥，请提供控制台截图📸或者您的测试网址\n3. 其他任何报错💣，请提供详细描述或截图📸，祝食用愉快💪"},"emoji":["https://unpkg.com/@waline/emojis@1.4.0/alus","https://unpkg.com/@waline/emojis@1.4.0/bilibili","https://unpkg.com/@waline/emojis@1.4.0/qq","https://unpkg.com/@waline/emojis@1.4.0/tw-emoji"]},"quicklink":{"timeout":2000,"priority":true},"audio":[{"title":"WY","list":["https://music.163.com/#/playlist?id=17822822368","https://music.163.com/#/playlist?id=17822887380","https://music.163.com/#/playlist?id=14304428642","https://music.163.com/#/playlist?id=9485652201"]},{"title":"QQ","list":["https://y.qq.com/n/yqq/playsquare/9653969987.html","https://y.qq.com/n/yqq/playsquare/9657346386.html","https://y.qq.com/n/ryqq/playlist/7994687559.html","https://y.qq.com/n/yqq/playsquare/3535982902.html"]}],"fireworks":["rgba(255,182,185,.9)","rgba(250,227,217,.9)","rgba(187,222,214,.9)","rgba(138,198,209,.9)"]};const getRndInteger = function (min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
@@ -23,16 +23,32 @@ const getScript = function(url, callback, condition) {
   }
 }
 
+// const assetUrl = function(asset, type) {
+//   var str = CONFIG[asset][type]
+//   if(str.indexOf('npm')>-1||str.indexOf('gh')>-1||str.indexOf('combine')>-1)
+//     return "//cdn.jsdelivr.net/" + str
+
+//   if(str.indexOf('http')>-1)
+//     return str
+
+//   return statics + str;
+// }
+
 const assetUrl = function(asset, type) {
   var str = CONFIG[asset][type]
-  if(str.indexOf('npm')>-1||str.indexOf('gh')>-1||str.indexOf('combine')>-1)
-    return "//cdn.jsdelivr.net/" + str
 
-  if(str.indexOf('http')>-1)
-    return str
+  if(-1 != str.indexOf("combine") || -1 != str.indexOf("npm"))
+    return "https://cdn.jsdelivr.net/" + str;
+  
+  if(-1 != str.indexOf("unpkg.com"))
+    return "https://" + str;
+  
+  if (-1 != str.indexOf('http'))
+    return str;
 
   return statics + str;
 }
+
 
 const vendorJs = function(type, callback, condition) {
   if(LOCAL[type]) {

@@ -76,7 +76,7 @@ MuBai Boat = 源夢 = 人生如逆旅, 我亦是行人</title>
       <i class="ic i-pen"></i>
     </span>
     <span class="text">本文字数</span>
-    <span>32k</span>
+    <span>35k</span>
     <span class="text">字</span>
   </span>
   <span class="item" title="阅读时长">
@@ -84,7 +84,7 @@ MuBai Boat = 源夢 = 人生如逆旅, 我亦是行人</title>
       <i class="ic i-clock"></i>
     </span>
     <span class="text">阅读时长</span>
-    <span>29 分钟</span>
+    <span>32 分钟</span>
   </span>
 </div>
 
@@ -117,12 +117,12 @@ MuBai Boat = 源夢 = 人生如逆旅, 我亦是行人</title>
       </div>
       <div id="imgs" class="pjax">
         <ul>
-          <li class="item" data-background-image="https://www.loliapi.com/acg/?689966"></li>
-          <li class="item" data-background-image="https://www.loliapi.com/acg/?205251"></li>
-          <li class="item" data-background-image="https://www.loliapi.com/acg/?583500"></li>
-          <li class="item" data-background-image="https://www.loliapi.com/acg/?713513"></li>
-          <li class="item" data-background-image="https://www.loliapi.com/acg/?828064"></li>
-          <li class="item" data-background-image="https://www.loliapi.com/acg/?144907"></li>
+          <li class="item" data-background-image="https://www.loliapi.com/acg/?907174"></li>
+          <li class="item" data-background-image="https://www.loliapi.com/acg/?445245"></li>
+          <li class="item" data-background-image="https://www.loliapi.com/acg/?586919"></li>
+          <li class="item" data-background-image="https://www.loliapi.com/acg/?100053"></li>
+          <li class="item" data-background-image="https://www.loliapi.com/acg/?772688"></li>
+          <li class="item" data-background-image="https://www.loliapi.com/acg/?683908"></li>
         </ul>
       </div>
     </header>
@@ -609,7 +609,21 @@ MuBai Boat = 源夢 = 人生如逆旅, 我亦是行人</title>
 <li>异常原因: hexo 新版本的默认高亮渲染器禁用方法变更，导致主题的自定义渲染器没有正确生效</li>
 <li>解决方法:</li>
 </ol>
-<figure class="highlight yaml"><figcaption data-lang="YAML"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token comment"># 旧版本禁用方式</span></pre></td></tr><tr><td data-num="2"></td><td><pre><span class="token key atrule">highlight</span><span class="token punctuation">:</span></pre></td></tr><tr><td data-num="3"></td><td><pre>  <span class="token key atrule">enable</span><span class="token punctuation">:</span> <span class="token boolean important">false</span></pre></td></tr><tr><td data-num="4"></td><td><pre><span class="token key atrule">prismjs</span><span class="token punctuation">:</span></pre></td></tr><tr><td data-num="5"></td><td><pre>  <span class="token key atrule">enable</span><span class="token punctuation">:</span> <span class="token boolean important">false</span></pre></td></tr><tr><td data-num="6"></td><td><pre>  </pre></td></tr><tr><td data-num="7"></td><td><pre><span class="token comment"># 新版本变更</span></pre></td></tr><tr><td data-num="8"></td><td><pre><span class="token key atrule">syntax_highlighter</span><span class="token punctuation">:</span> <span class="token boolean important">false</span></pre></td></tr><tr><td data-num="9"></td><td><pre><span class="token key atrule">prismjs</span><span class="token punctuation">:</span></pre></td></tr><tr><td data-num="10"></td><td><pre>  <span class="token key atrule">enable</span><span class="token punctuation">:</span> <span class="token boolean important">false</span></pre></td></tr></table></figure>
+<figure class="highlight yaml"><figcaption data-lang="YAML"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token comment"># 旧版本禁用方式</span></pre></td></tr><tr><td data-num="2"></td><td><pre><span class="token key atrule">highlight</span><span class="token punctuation">:</span></pre></td></tr><tr><td data-num="3"></td><td><pre>  <span class="token key atrule">enable</span><span class="token punctuation">:</span> <span class="token boolean important">false</span></pre></td></tr><tr><td data-num="4"></td><td><pre><span class="token key atrule">prismjs</span><span class="token punctuation">:</span></pre></td></tr><tr><td data-num="5"></td><td><pre>  <span class="token key atrule">enable</span><span class="token punctuation">:</span> <span class="token boolean important">false</span></pre></td></tr><tr><td data-num="6"></td><td><pre>  </pre></td></tr><tr><td data-num="7"></td><td><pre><span class="token comment"># 新版本变更</span></pre></td></tr><tr><td data-num="8"></td><td><pre><span class="token key atrule">syntax_highlighter</span><span class="token punctuation">:</span> <span class="token boolean important">false</span></pre></td></tr><tr><td data-num="9"></td><td><pre><span class="token key atrule">prismjs</span><span class="token punctuation">:</span></pre></td></tr><tr><td data-num="10"></td><td><pre>  <span class="token key atrule">enable</span><span class="token punctuation">:</span> <span class="token boolean important">false</span></pre></td></tr></table></figure><h2 id="6hexo-访问加速"><a class="anchor" href="#6hexo-访问加速">#</a> 6.Hexo 访问加速</h2>
+<div class="note danger no-icon">
+<p>Hexo 的 shoka 大部分依赖使用  <code>jsdelivr</code>  的加速链，而  <code>jsdelivr</code>  在国内网络访问时加载速度慢，或这无法访问.<br />
+ 解决方案：将 <code>jsdelivr</code>  加速的部分依赖替换为 <code>unpkg</code></p>
+</div>
+<ul>
+<li>(step.1 修改插件依赖链接前缀)</li>
+</ul>
+<figure class="highlight yaml"><figcaption data-lang="YAML"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token comment"># fancybox 依赖由于是 jquery，fancybox 和 justifiedGallery 复合型，所以暂不处理</span></pre></td></tr><tr><td data-num="2"></td><td><pre><span class="token key atrule">vendors</span><span class="token punctuation">:</span></pre></td></tr><tr><td data-num="3"></td><td><pre>  <span class="token key atrule">css</span><span class="token punctuation">:</span></pre></td></tr><tr><td data-num="4"></td><td><pre>    <span class="token key atrule">katex</span><span class="token punctuation">:</span> npm/katex@0.12.0/dist/katex.min.css</pre></td></tr><tr><td data-num="5"></td><td><pre>    <span class="token key atrule">waline_crop</span><span class="token punctuation">:</span> css/comment.css</pre></td></tr><tr><td data-num="6"></td><td><pre>    <span class="token key atrule">waline</span><span class="token punctuation">:</span> combine/npm/@waline/client@v3/dist/waline.min.css<span class="token punctuation">,</span>npm/@waline/client@v3/dist/waline<span class="token punctuation">-</span>meta.min.css</pre></td></tr><tr><td data-num="7"></td><td><pre>    <span class="token key atrule">fancybox</span><span class="token punctuation">:</span> combine/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css<span class="token punctuation">,</span>npm/justifiedGallery@3.8.1/dist/css/justifiedGallery.min.css</pre></td></tr><tr><td data-num="8"></td><td><pre>  <span class="token key atrule">js</span><span class="token punctuation">:</span></pre></td></tr><tr><td data-num="9"></td><td><pre>    <span class="token key atrule">pace</span><span class="token punctuation">:</span> unpkg.com/pace<span class="token punctuation">-</span>js@1.0.2/pace.min.js</pre></td></tr><tr><td data-num="10"></td><td><pre>    <span class="token key atrule">pjax</span><span class="token punctuation">:</span> unpkg.com/pjax@0.2.8/pjax.min.js</pre></td></tr><tr><td data-num="11"></td><td><pre>    <span class="token key atrule">fetch</span><span class="token punctuation">:</span> unpkg.com/whatwg<span class="token punctuation">-</span>fetch@3.4.0/dist/fetch.umd.min.js</pre></td></tr><tr><td data-num="12"></td><td><pre>    <span class="token key atrule">anime</span><span class="token punctuation">:</span> unpkg.com/animejs@3.2.0/lib/anime.min.js</pre></td></tr><tr><td data-num="13"></td><td><pre>    <span class="token key atrule">algolia</span><span class="token punctuation">:</span> unpkg.com/algoliasearch@4/dist/algoliasearch<span class="token punctuation">-</span>lite.umd.js</pre></td></tr><tr><td data-num="14"></td><td><pre>    <span class="token key atrule">instantsearch</span><span class="token punctuation">:</span> unpkg.com/instantsearch.js@4/dist/instantsearch.production.min.js</pre></td></tr><tr><td data-num="15"></td><td><pre>    <span class="token key atrule">lazyload</span><span class="token punctuation">:</span> unpkg.com/lozad@1/dist/lozad.min.js</pre></td></tr><tr><td data-num="16"></td><td><pre>    <span class="token key atrule">quicklink</span><span class="token punctuation">:</span> unpkg.com/quicklink@2/dist/quicklink.umd.js</pre></td></tr><tr><td data-num="17"></td><td><pre>    <span class="token key atrule">fancybox</span><span class="token punctuation">:</span> combine/npm/jquery@3.5.1/dist/jquery.min.js<span class="token punctuation">,</span>npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js<span class="token punctuation">,</span>npm/justifiedGallery@3.8.1/dist/js/jquery.justifiedGallery.min.js</pre></td></tr><tr><td data-num="18"></td><td><pre>    <span class="token key atrule">waline</span><span class="token punctuation">:</span> unpkg.com/@waline/client@v3/dist/waline.umd.js</pre></td></tr><tr><td data-num="19"></td><td><pre>    <span class="token key atrule">copy_tex</span><span class="token punctuation">:</span> unpkg.com/katex@0.12.0/dist/contrib/copy<span class="token punctuation">-</span>tex.min.js</pre></td></tr><tr><td data-num="20"></td><td><pre>    <span class="token key atrule">chart</span><span class="token punctuation">:</span> unpkg.com/frappe<span class="token punctuation">-</span>charts@1.5.0/dist/frappe<span class="token punctuation">-</span>charts.min.iife.min.js</pre></td></tr></table></figure><ul>
+<li>(step.2 更改调用 jsdelivr 加速组合链接的代码)</li>
+</ul>
+<figure class="highlight javascript"><figcaption data-lang="javascript"></figcaption><table><tr><td data-num="1"></td><td><pre>hexo<span class="token punctuation">.</span>extend<span class="token punctuation">.</span>helper<span class="token punctuation">.</span><span class="token function">register</span><span class="token punctuation">(</span><span class="token string">'_vendor_js'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="2"></td><td><pre>  <span class="token keyword">const</span> config <span class="token operator">=</span> hexo<span class="token punctuation">.</span>theme<span class="token punctuation">.</span>config<span class="token punctuation">.</span>vendors<span class="token punctuation">.</span>js<span class="token punctuation">;</span></pre></td></tr><tr><td data-num="3"></td><td><pre>  <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>config<span class="token punctuation">)</span> <span class="token keyword">return</span> <span class="token string">''</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="4"></td><td><pre>  <span class="token comment">// Get a font list from config</span></pre></td></tr><tr><td data-num="5"></td><td><pre>  <span class="token keyword">let</span> jsdelivr_url <span class="token operator">=</span> <span class="token string">""</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="6"></td><td><pre>  <span class="token keyword">let</span> Js_mix <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="7"></td><td><pre>  <span class="token keyword">let</span> vendors <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'pace'</span><span class="token punctuation">,</span> <span class="token string">'pjax'</span><span class="token punctuation">,</span> <span class="token string">'fetch'</span><span class="token punctuation">,</span> <span class="token string">'anime'</span><span class="token punctuation">,</span> <span class="token string">'algolia'</span><span class="token punctuation">,</span> <span class="token string">'instantsearch'</span><span class="token punctuation">,</span> <span class="token string">'lazyload'</span><span class="token punctuation">,</span> <span class="token string">'quicklink'</span><span class="token punctuation">]</span></pre></td></tr><tr><td data-num="8"></td><td><pre>  vendors<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token parameter">item</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="9"></td><td><pre>    <span class="token keyword">let</span> url_path <span class="token operator">=</span> config<span class="token punctuation">[</span>item<span class="token punctuation">]</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="10"></td><td><pre>    <span class="token keyword">if</span><span class="token punctuation">(</span>url_path<span class="token punctuation">.</span>length<span class="token punctuation">)</span><span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="11"></td><td><pre>      <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">1</span> <span class="token operator">!=</span> url_path<span class="token punctuation">.</span><span class="token function">indexOf</span><span class="token punctuation">(</span><span class="token string">"npm"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="12"></td><td><pre>        jsdelivr_url <span class="token operator">+=</span> jsdelivr_url <span class="token operator">?</span> <span class="token punctuation">(</span><span class="token string">","</span> <span class="token operator">+</span> url_path<span class="token punctuation">)</span> <span class="token operator">:</span> url_path<span class="token punctuation">;</span></pre></td></tr><tr><td data-num="13"></td><td><pre>      <span class="token punctuation">&#125;</span><span class="token keyword">else</span><span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="14"></td><td><pre>        Js_mix<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>url_path<span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="15"></td><td><pre>      <span class="token punctuation">&#125;</span></pre></td></tr><tr><td data-num="16"></td><td><pre>    <span class="token punctuation">&#125;</span></pre></td></tr><tr><td data-num="17"></td><td><pre>  <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="18"></td><td><pre>  <span class="token keyword">if</span><span class="token punctuation">(</span>jsdelivr_url<span class="token punctuation">.</span>length<span class="token punctuation">)</span><span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="19"></td><td><pre>    Js_mix<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token string">"cdn.jsdelivr.net/combine/"</span> <span class="token operator">+</span> jsdelivr_url<span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="20"></td><td><pre>  <span class="token punctuation">&#125;</span></pre></td></tr><tr><td data-num="21"></td><td><pre>  <span class="token keyword">return</span> Js_mix<span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span><span class="token parameter">url</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="22"></td><td><pre>      <span class="token keyword">return</span> <span class="token function">htmlTag</span><span class="token punctuation">(</span><span class="token string">'script'</span><span class="token punctuation">,</span> <span class="token punctuation">&#123;</span> <span class="token literal-property property">src</span><span class="token operator">:</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">https://</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">$&#123;</span>url<span class="token interpolation-punctuation punctuation">&#125;</span></span><span class="token template-punctuation string">`</span></span> <span class="token punctuation">&#125;</span><span class="token punctuation">,</span> <span class="token string">''</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="23"></td><td><pre>  <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span><span class="token string">''</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="24"></td><td><pre><span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr></table></figure><ul>
+<li>(step.3 修改 vendors 插件链接索引代码)</li>
+</ul>
+<figure class="highlight javascript"><figcaption data-lang="javascript"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token comment">//unpkg 链接与 jsdelivr 链接的混合写法</span></pre></td></tr><tr><td data-num="2"></td><td><pre><span class="token keyword">const</span> <span class="token function-variable function">assetUrl</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">asset<span class="token punctuation">,</span> type</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="3"></td><td><pre>  <span class="token keyword">var</span> str <span class="token operator">=</span> <span class="token constant">CONFIG</span><span class="token punctuation">[</span>asset<span class="token punctuation">]</span><span class="token punctuation">[</span>type<span class="token punctuation">]</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="4"></td><td><pre>  <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">1</span> <span class="token operator">!=</span> str<span class="token punctuation">.</span><span class="token function">indexOf</span><span class="token punctuation">(</span><span class="token string">"combine"</span><span class="token punctuation">)</span> <span class="token operator">||</span> <span class="token operator">-</span><span class="token number">1</span> <span class="token operator">!=</span> str<span class="token punctuation">.</span><span class="token function">indexOf</span><span class="token punctuation">(</span><span class="token string">"npm"</span><span class="token punctuation">)</span><span class="token punctuation">)</span></pre></td></tr><tr><td data-num="5"></td><td><pre>    <span class="token keyword">return</span> <span class="token string">"https://cdn.jsdelivr.net/"</span> <span class="token operator">+</span> str<span class="token punctuation">;</span></pre></td></tr><tr><td data-num="6"></td><td><pre>  <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">1</span> <span class="token operator">!=</span> str<span class="token punctuation">.</span><span class="token function">indexOf</span><span class="token punctuation">(</span><span class="token string">"unpkg.com"</span><span class="token punctuation">)</span><span class="token punctuation">)</span></pre></td></tr><tr><td data-num="7"></td><td><pre>    <span class="token keyword">return</span> <span class="token string">"https://"</span> <span class="token operator">+</span> str<span class="token punctuation">;</span></pre></td></tr><tr><td data-num="8"></td><td><pre>  </pre></td></tr><tr><td data-num="9"></td><td><pre>  <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">1</span> <span class="token operator">!=</span> str<span class="token punctuation">.</span><span class="token function">indexOf</span><span class="token punctuation">(</span><span class="token string">'http'</span><span class="token punctuation">)</span><span class="token punctuation">)</span></pre></td></tr><tr><td data-num="10"></td><td><pre>    <span class="token keyword">return</span> str<span class="token punctuation">;</span></pre></td></tr><tr><td data-num="11"></td><td><pre>  </pre></td></tr><tr><td data-num="12"></td><td><pre>  <span class="token keyword">return</span> statics <span class="token operator">+</span> str<span class="token punctuation">;</span></pre></td></tr><tr><td data-num="13"></td><td><pre><span class="token punctuation">&#125;</span></pre></td></tr></table></figure>
       <div class="tags">
           <a href="/tags/%E8%AF%B4%E6%98%8E%E6%96%87%E6%A1%A3/" rel="tag"><i class="ic i-tag"></i> 说明文档</a>
           <a href="/tags/hexo/" rel="tag"><i class="ic i-tag"></i> hexo</a>
@@ -624,7 +638,7 @@ MuBai Boat = 源夢 = 人生如逆旅, 我亦是行人</title>
       <i class="ic i-calendar-check"></i>
     </span>
     <span class="text">更新于</span>
-    <time title="修改时间：2026-03-20 23:20:38" itemprop="dateModified" datetime="2026-03-20T23:20:38+08:00">2026-03-20</time>
+    <time title="修改时间：2026-03-23 19:08:12" itemprop="dateModified" datetime="2026-03-23T19:08:12+08:00">2026-03-23</time>
   </span>
   
   <span class="item" data-path="/procedure/application/hexo/hexo-config-doc/" title="阅读次数">
@@ -664,7 +678,7 @@ MuBai Boat = 源夢 = 人生如逆旅, 我亦是行人</title>
     <div class="item left">
       
 
-  <a href="/pdl/NodeJs/FrontEnd/webKnowLedge/" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;www.loliapi.com&#x2F;acg&#x2F;?325206" title="前端基础知识">
+  <a href="/pdl/NodeJs/FrontEnd/webKnowLedge/" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;www.loliapi.com&#x2F;acg&#x2F;?563318" title="前端基础知识">
   <span class="type">上一篇</span>
   <span class="category"><i class="ic i-flag"></i> FrontEnd</span>
   <h3>前端基础知识</h3>
@@ -674,10 +688,10 @@ MuBai Boat = 源夢 = 人生如逆旅, 我亦是行人</title>
     <div class="item right">
       
 
-  <a href="/pdl/NodeJs/Vue/vue3/" itemprop="url" rel="next" data-background-image="https:&#x2F;&#x2F;www.loliapi.com&#x2F;acg&#x2F;?743410" title="Vue3语法变化">
+  <a href="/procedure/application/github/GoFilm/" itemprop="url" rel="next" data-background-image="https:&#x2F;&#x2F;www.loliapi.com&#x2F;acg&#x2F;?387216" title="GoFilm 部署">
   <span class="type">下一篇</span>
-  <span class="category"><i class="ic i-flag"></i> Vue</span>
-  <h3>Vue3语法变化</h3>
+  <span class="category"><i class="ic i-flag"></i> GoFilm</span>
+  <h3>GoFilm 部署</h3>
   </a>
 
     </div>
@@ -698,11 +712,11 @@ MuBai Boat = 源夢 = 人生如逆旅, 我亦是行人</title>
   <div class="panels">
     <div class="inner">
       <div class="contents panel pjax" data-title="文章目录">
-          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#hexo-%E4%BD%BF%E7%94%A8%E6%89%8B%E5%86%8C"><span class="toc-number">1.</span> <span class="toc-text"> Hexo 使用手册</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-hexo-%E5%AE%89%E8%A3%85%E6%B5%81%E7%A8%8B"><span class="toc-number">1.1.</span> <span class="toc-text"> 1. Hexo 安装流程</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-%E5%9F%BA%E7%A1%80%E7%8E%AF%E5%A2%83"><span class="toc-number">1.1.1.</span> <span class="toc-text"> 1. 基础环境</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-%E5%88%9D%E5%A7%8B%E5%8C%96%E9%A1%B9%E7%9B%AE"><span class="toc-number">1.1.2.</span> <span class="toc-text"> 2. 初始化项目</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-hexo-%E4%B8%BB%E9%A2%98"><span class="toc-number">1.2.</span> <span class="toc-text"> 2. Hexo 主题</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-shoka-%E4%B8%BB%E9%A2%98%E5%AE%89%E8%A3%85"><span class="toc-number">1.2.1.</span> <span class="toc-text"> 1.  shoka 主题安装</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-%E6%8F%92%E4%BB%B6%E5%A4%84%E7%90%86"><span class="toc-number">1.2.2.</span> <span class="toc-text"> 2. 插件处理</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-%E9%A1%B5%E9%9D%A2%E9%85%8D%E7%BD%AE"><span class="toc-number">1.2.3.</span> <span class="toc-text"> 3. 页面配置</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-hexo-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4"><span class="toc-number">1.3.</span> <span class="toc-text"> 3. Hexo 常用命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-markdown%E6%96%87%E7%AB%A0%E9%85%8D%E7%BD%AE"><span class="toc-number">1.4.</span> <span class="toc-text"> 4. MarkDown 文章配置</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-front-matter-%E6%A0%87%E7%AD%BE"><span class="toc-number">1.4.1.</span> <span class="toc-text"> 1. front-matter 标签</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-%E5%B8%B8%E7%94%A8%E8%AF%AD%E6%B3%95%E6%A0%87%E7%AD%BE"><span class="toc-number">1.4.2.</span> <span class="toc-text"> 2. 常用语法标签</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98%E5%90%88%E9%9B%86"><span class="toc-number">1.5.</span> <span class="toc-text"> 5. 常见问题合集</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-hexo-symbols-count-time-%E4%BE%9D%E8%B5%96"><span class="toc-number">1.5.1.</span> <span class="toc-text"> 1. hexo-symbols-count-time 依赖</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-code-%E4%BB%A3%E7%A0%81%E5%9D%97%E5%84%BF%E6%B8%B2%E6%9F%93%E5%BC%82%E5%B8%B8"><span class="toc-number">1.5.2.</span> <span class="toc-text"> 2. code 代码块儿渲染异常</span></a></li></ol></li></ol></li></ol>
+          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#hexo-%E4%BD%BF%E7%94%A8%E6%89%8B%E5%86%8C"><span class="toc-number">1.</span> <span class="toc-text"> Hexo 使用手册</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-hexo-%E5%AE%89%E8%A3%85%E6%B5%81%E7%A8%8B"><span class="toc-number">1.1.</span> <span class="toc-text"> 1. Hexo 安装流程</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-%E5%9F%BA%E7%A1%80%E7%8E%AF%E5%A2%83"><span class="toc-number">1.1.1.</span> <span class="toc-text"> 1. 基础环境</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-%E5%88%9D%E5%A7%8B%E5%8C%96%E9%A1%B9%E7%9B%AE"><span class="toc-number">1.1.2.</span> <span class="toc-text"> 2. 初始化项目</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-hexo-%E4%B8%BB%E9%A2%98"><span class="toc-number">1.2.</span> <span class="toc-text"> 2. Hexo 主题</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-shoka-%E4%B8%BB%E9%A2%98%E5%AE%89%E8%A3%85"><span class="toc-number">1.2.1.</span> <span class="toc-text"> 1.  shoka 主题安装</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-%E6%8F%92%E4%BB%B6%E5%A4%84%E7%90%86"><span class="toc-number">1.2.2.</span> <span class="toc-text"> 2. 插件处理</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-%E9%A1%B5%E9%9D%A2%E9%85%8D%E7%BD%AE"><span class="toc-number">1.2.3.</span> <span class="toc-text"> 3. 页面配置</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-hexo-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4"><span class="toc-number">1.3.</span> <span class="toc-text"> 3. Hexo 常用命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-markdown%E6%96%87%E7%AB%A0%E9%85%8D%E7%BD%AE"><span class="toc-number">1.4.</span> <span class="toc-text"> 4. MarkDown 文章配置</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-front-matter-%E6%A0%87%E7%AD%BE"><span class="toc-number">1.4.1.</span> <span class="toc-text"> 1. front-matter 标签</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-%E5%B8%B8%E7%94%A8%E8%AF%AD%E6%B3%95%E6%A0%87%E7%AD%BE"><span class="toc-number">1.4.2.</span> <span class="toc-text"> 2. 常用语法标签</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98%E5%90%88%E9%9B%86"><span class="toc-number">1.5.</span> <span class="toc-text"> 5. 常见问题合集</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-hexo-symbols-count-time-%E4%BE%9D%E8%B5%96"><span class="toc-number">1.5.1.</span> <span class="toc-text"> 1. hexo-symbols-count-time 依赖</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-code-%E4%BB%A3%E7%A0%81%E5%9D%97%E5%84%BF%E6%B8%B2%E6%9F%93%E5%BC%82%E5%B8%B8"><span class="toc-number">1.5.2.</span> <span class="toc-text"> 2. code 代码块儿渲染异常</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6hexo-%E8%AE%BF%E9%97%AE%E5%8A%A0%E9%80%9F"><span class="toc-number">1.6.</span> <span class="toc-text"> 6.Hexo 访问加速</span></a></li></ol></li></ol>
       </div>
       <div class="related panel pjax" data-title="系列文章">
         <ul>
-          <li><a href="/procedure/application/hexo/shoka/config/" rel="bookmark" title="Step.2 基本配置">Step.2 基本配置</a></li><li><a href="/procedure/application/hexo/shoka/dependents/" rel="bookmark" title="Step.1 依赖插件">Step.1 依赖插件</a></li><li><a href="/procedure/application/hexo/shoka/special/" rel="bookmark" title="Step.4 主题特殊功能">Step.4 主题特殊功能</a></li><li><a href="/procedure/application/hexo/shoka/display/" rel="bookmark" title="Step.3 界面显示">Step.3 界面显示</a></li><li><a href="/procedure/application/hexo/shoka/theme-shoka-doc/" rel="bookmark" title="Hexo主题Shoka & multi-markdown-it渲染器使用说明">Hexo主题Shoka & multi-markdown-it渲染器使用说明</a></li><li class="active"><a href="/procedure/application/hexo/hexo-config-doc/" rel="bookmark" title="Hexo使用手册">Hexo使用手册</a></li>
+          <li><a href="/procedure/application/hexo/shoka/dependents/" rel="bookmark" title="Step.1 依赖插件">Step.1 依赖插件</a></li><li><a href="/procedure/application/hexo/shoka/display/" rel="bookmark" title="Step.3 界面显示">Step.3 界面显示</a></li><li><a href="/procedure/application/hexo/shoka/config/" rel="bookmark" title="Step.2 基本配置">Step.2 基本配置</a></li><li><a href="/procedure/application/hexo/shoka/special/" rel="bookmark" title="Step.4 主题特殊功能">Step.4 主题特殊功能</a></li><li><a href="/procedure/application/hexo/shoka/theme-shoka-doc/" rel="bookmark" title="Hexo主题Shoka & multi-markdown-it渲染器使用说明">Hexo主题Shoka & multi-markdown-it渲染器使用说明</a></li><li class="active"><a href="/procedure/application/hexo/hexo-config-doc/" rel="bookmark" title="Hexo使用手册">Hexo使用手册</a></li>
         </ul>
       </div>
       <div class="overview panel" data-title="站点概览">
@@ -797,7 +811,7 @@ MuBai Boat = 源夢 = 人生如逆旅, 我亦是行人</title>
     <li class="up"><i class="ic i-arrow-up"></i></li>
     <li class="down"><i class="ic i-arrow-down"></i></li>
     <li class="next pjax">
-        <a href="/pdl/NodeJs/Vue/vue3/" rel="next" title="下一篇"><i class="ic i-chevron-right"></i></a>
+        <a href="/procedure/application/github/GoFilm/" rel="next" title="下一篇"><i class="ic i-chevron-right"></i></a>
     </li>
     <li class="percent"></li>
   </ul>
@@ -820,11 +834,83 @@ MuBai Boat = 源夢 = 人生如逆旅, 我亦是行人</title>
     
 <div class="breadcrumb">
 <a href="/categories/pdl/" title="分类于 编程">编程</a>
+</div>
+
+    <span><a href="/pdl/NodeJs/Vue/Axios/" title="Axios用法及配置">Axios用法及配置</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/pdl/" title="分类于 编程">编程</a>
 <i class="ic i-angle-right"></i>
 <a href="/categories/pdl/GoLang/" title="分类于 GoLang">GoLang</a>
 </div>
 
-    <span><a href="/pdl/GoLang/GoLang%E5%85%A5%E9%97%A8%E7%AF%87(%E4%B8%8B)/" title="GoLang入门笔记(下)">GoLang入门笔记(下)</a></span>
+    <span><a href="/pdl/GoLang/GoLang%E5%85%A5%E9%97%A8%E7%AF%87(%E4%B8%8A)/" title="GoLang入门笔记(上)">GoLang入门笔记(上)</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/procedure/" title="分类于 程序">程序</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/procedure/FrontEnd/" title="分类于 FrontEnd">FrontEnd</a>
+</div>
+
+    <span><a href="/pdl/NodeJs/FrontEnd/webKnowLedge/" title="前端基础知识">前端基础知识</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/procedure/" title="分类于 程序">程序</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/procedure/hexo/" title="分类于 hexo">hexo</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/procedure/hexo/Theme-Shoka-Documentation/" title="分类于 Theme Shoka Documentation">Theme Shoka Documentation</a>
+</div>
+
+    <span><a href="/procedure/application/hexo/shoka/special/" title="Step.4 主题特殊功能">Step.4 主题特殊功能</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/pdl/" title="分类于 编程">编程</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/pdl/Vue/" title="分类于 Vue">Vue</a>
+</div>
+
+    <span><a href="/pdl/NodeJs/Vue/vue3/" title="Vue3语法变化">Vue3语法变化</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/vestige/" title="分类于 迹忆">迹忆</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/vestige/%E7%AE%80%E4%BB%8B/" title="分类于 简介">简介</a>
+</div>
+
+    <span><a href="/vestige/about/Summary/" title="网站简介">网站简介</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/procedure/" title="分类于 程序">程序</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/procedure/hexo/" title="分类于 hexo">hexo</a>
+</div>
+
+    <span><a href="/procedure/application/hexo/hexo-config-doc/" title="Hexo使用手册">Hexo使用手册</a></span>
   </li>
 
       
@@ -845,60 +931,12 @@ MuBai Boat = 源夢 = 人生如逆旅, 我亦是行人</title>
   <li class="item">
     
 <div class="breadcrumb">
-<a href="/categories/procedure/" title="分类于 程序">程序</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/procedure/MySQL/" title="分类于 MySQL">MySQL</a>
-</div>
-
-    <span><a href="/procedure/frames/others/mysql/NodeQuerySQL/" title="Sql 记录">Sql 记录</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
 <a href="/categories/pdl/" title="分类于 编程">编程</a>
 <i class="ic i-angle-right"></i>
 <a href="/categories/pdl/Vue/" title="分类于 Vue">Vue</a>
 </div>
 
-    <span><a href="/pdl/NodeJs/Vue/vite/" title="Vite入门">Vite入门</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/procedure/" title="分类于 程序">程序</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/procedure/GoFilm/" title="分类于 GoFilm">GoFilm</a>
-</div>
-
-    <span><a href="/procedure/application/github/GoFilm/" title="GoFilm 部署">GoFilm 部署</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/pdl/" title="分类于 编程">编程</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/pdl/GoLang/" title="分类于 GoLang">GoLang</a>
-</div>
-
-    <span><a href="/pdl/GoLang/GoLang%E6%8B%93%E5%B1%95/" title="GoLang入门笔记(下)">GoLang入门笔记(下)</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/pdl/" title="分类于 编程">编程</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/pdl/NodeJS/" title="分类于 NodeJS">NodeJS</a>
-</div>
-
-    <span><a href="/pdl/NodeJs/Node/NodeConfig/" title="NodeJS配置">NodeJS配置</a></span>
+    <span><a href="/pdl/NodeJs/Vue/%E5%89%8D%E7%AB%AF%E6%96%87%E6%A1%A3/" title="前端常用API">前端常用API</a></span>
   </li>
 
       
@@ -911,30 +949,6 @@ MuBai Boat = 源夢 = 人生如逆旅, 我亦是行人</title>
 </div>
 
     <span><a href="/pdl/GoLang/GoLang%E5%9F%BA%E7%A1%80%E6%8B%93%E5%B1%95/" title="GoLang冷知识">GoLang冷知识</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/resource/" title="分类于 资源">资源</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/resource/links/" title="分类于 links">links</a>
-</div>
-
-    <span><a href="/resource/links/resource-navigation/" title="资源导航">资源导航</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/pdl/" title="分类于 编程">编程</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/pdl/Vue/" title="分类于 Vue">Vue</a>
-</div>
-
-    <span><a href="/pdl/NodeJs/Vue/vue3/" title="Vue3语法变化">Vue3语法变化</a></span>
   </li>
 
   </ul>
@@ -959,12 +973,12 @@ MuBai Boat = 源夢 = 人生如逆旅, 我亦是行人</title>
     <span class="post-meta-item-icon">
       <i class="ic i-chart-area"></i>
     </span>
-    <span title="站点总字数">311k 字</span>
+    <span title="站点总字数">314k 字</span>
 
     <span class="post-meta-item-icon">
       <i class="ic i-coffee"></i>
     </span>
-    <span title="站点阅读时长">4:43</span>
+    <span title="站点阅读时长">4:45</span>
   </div>
 </div>
 
@@ -997,7 +1011,7 @@ MuBai Boat = 源夢 = 人生如逆旅, 我亦是行人</title>
 </script>
 
 
-<script src="//cdn.jsdelivr.net/combine/npm/pace-js@1.0.2/pace.min.js,npm/pjax@0.2.8/pjax.min.js,npm/whatwg-fetch@3.4.0/dist/fetch.umd.min.js,npm/animejs@3.2.0/lib/anime.min.js,npm/algoliasearch@4/dist/algoliasearch-lite.umd.js,npm/instantsearch.js@4/dist/instantsearch.production.min.js,npm/lozad@1/dist/lozad.min.js,npm/quicklink@2/dist/quicklink.umd.js"></script>
+<script src="https://unpkg.com/pace-js@1.0.2/pace.min.js"></script><script src="https://unpkg.com/pjax@0.2.8/pjax.min.js"></script><script src="https://unpkg.com/whatwg-fetch@3.4.0/dist/fetch.umd.min.js"></script><script src="https://unpkg.com/animejs@3.2.0/lib/anime.min.js"></script><script src="https://unpkg.com/algoliasearch@4/dist/algoliasearch-lite.umd.js"></script><script src="https://unpkg.com/instantsearch.js@4/dist/instantsearch.production.min.js"></script><script src="https://unpkg.com/lozad@1/dist/lozad.min.js"></script><script src="https://unpkg.com/quicklink@2/dist/quicklink.umd.js"></script>
 
 <script src="/js/app.js?v=0.2.5"></script>
 
