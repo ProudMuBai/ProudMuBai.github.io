@@ -89,12 +89,12 @@
       </div>
       <div id="imgs" class="pjax">
         <ul>
-          <li class="item" data-background-image="https://www.loliapi.com/acg/?410856"></li>
-          <li class="item" data-background-image="https://www.loliapi.com/acg/?116245"></li>
-          <li class="item" data-background-image="https://www.loliapi.com/acg/?443598"></li>
-          <li class="item" data-background-image="https://www.loliapi.com/acg/?506848"></li>
-          <li class="item" data-background-image="https://www.loliapi.com/acg/?804084"></li>
-          <li class="item" data-background-image="https://www.loliapi.com/acg/?693823"></li>
+          <li class="item" data-background-image="https://www.loliapi.com/acg/?719285"></li>
+          <li class="item" data-background-image="https://www.loliapi.com/acg/?96227"></li>
+          <li class="item" data-background-image="https://www.loliapi.com/acg/?733228"></li>
+          <li class="item" data-background-image="https://www.loliapi.com/acg/?948229"></li>
+          <li class="item" data-background-image="https://www.loliapi.com/acg/?708234"></li>
+          <li class="item" data-background-image="https://www.loliapi.com/acg/?986698"></li>
         </ul>
       </div>
     </header>
@@ -121,7 +121,7 @@
           
 <article class="item">
   <div class="cover">
-    <a href="/procedure/application/github/GoFilm/" itemprop="url" title="GoFilm 部署"><img data-src="https://www.loliapi.com/acg/?768889"></a>
+    <a href="/procedure/application/github/GoFilm/" itemprop="url" title="GoFilm 部署"><img data-src="https://www.loliapi.com/acg/?760385"></a>
   </div>
   <div class="info">
     
@@ -200,27 +200,6 @@ GitHub 下载 GoFilm 项目
 
           
 <section class="item">
-  <div class="cover" data-background-image="/resource/cover.jpg">
-    <h2 class="title">资源</h2>
-  </div>
-  <div class="info">
-    <div class="ribbon"><a href="/categories/resource/" itemprop="url" title="资源">资源</a></div>
-    <div class="inner">
-        <ul class="posts">
-            <li><a title="links" href="/categories/resource/links/">links</a></li>
-        </ul>
-        <div class="meta footer">
-          <span>
-            <i class="ic i-file"></i>1 个子项，2 篇文章
-          </span>
-        </div>
-        <a href="/categories/resource/" itemprop="url" title="资源" class="btn">more...</a>
-    </div>
-  </div>
-</section>
-
-          
-<section class="item">
   <div class="cover" data-background-image="/vestige/cover.jpg">
     <h2 class="title">迹忆</h2>
   </div>
@@ -236,6 +215,27 @@ GitHub 下载 GoFilm 项目
           </span>
         </div>
         <a href="/categories/vestige/" itemprop="url" title="迹忆" class="btn">more...</a>
+    </div>
+  </div>
+</section>
+
+          
+<section class="item">
+  <div class="cover" data-background-image="/resource/cover.jpg">
+    <h2 class="title">资源</h2>
+  </div>
+  <div class="info">
+    <div class="ribbon"><a href="/categories/resource/" itemprop="url" title="资源">资源</a></div>
+    <div class="inner">
+        <ul class="posts">
+            <li><a title="links" href="/categories/resource/links/">links</a></li>
+        </ul>
+        <div class="meta footer">
+          <span>
+            <i class="ic i-file"></i>1 个子项，2 篇文章
+          </span>
+        </div>
+        <a href="/categories/resource/" itemprop="url" title="资源" class="btn">more...</a>
     </div>
   </div>
 </section>
@@ -258,7 +258,7 @@ GitHub 下载 GoFilm 项目
         </ul>
         <div class="meta footer">
           <span>
-            <i class="ic i-file"></i>7 个子项，12 篇文章
+            <i class="ic i-file"></i>8 个子项，13 篇文章
           </span>
         </div>
         <a href="/categories/procedure/" itemprop="url" title="程序" class="btn">more...</a>
@@ -272,7 +272,65 @@ GitHub 下载 GoFilm 项目
         
 <article class="item">
   <div class="cover">
-    <a href="/procedure/application/common/typora/" itemprop="url" title="Typora使用文档"><img data-src="https://www.loliapi.com/acg/?222174"></a>
+    <a href="/procedure/frames/nginx/BasicConfig/" itemprop="url" title="Nginx 基础配置"><img data-src="https://www.loliapi.com/acg/?429788"></a>
+  </div>
+  <div class="info">
+    
+<div class="meta">
+  <span class="item" title="创建时间：2026-04-12 23:55:36">
+    <span class="icon">
+      <i class="ic i-calendar"></i>
+    </span>
+    <time itemprop="dateCreated datePublished" datetime="2026-04-12T23:55:36+08:00">2026-04-12</time>
+  </span>
+  <span class="item" title="本文字数">
+    <span class="icon">
+      <i class="ic i-pen"></i>
+    </span>
+    <span>7.7k</span>
+    <span class="text">字</span>
+  </span>
+  <span class="item" title="阅读时长">
+    <span class="icon">
+      <i class="ic i-clock"></i>
+    </span>
+    <span>7 分钟</span>
+  </span>
+</div>
+
+    <h3><a href="/procedure/frames/nginx/BasicConfig/" itemprop="url" title="Nginx 基础配置">Nginx 基础配置</a></h3>
+    <div class="excerpt">
+        # Nginx 基础配置
+# 1. Nginx Docker 启动
+# docker run 部署
+
+拉取镜像: docker pull nginx:latest
+
+创建宿主机目录: mkdir -p /opt/nginx/{conf,conf.d,html,logs}
+
+获取 Nginx 默认配置文件
+
+启动临时容器: docker run --name nginx-temp -d nginx:latest
+
+容器内的配置文件和配置目录复制到宿主机
+
+docker cp nginx-temp:/etc/nginx/nginx.conf /opt/nginx/conf/
+
+docker cp...
+    </div>
+    <div class="meta footer">
+      <span>
+        <a href="/categories/procedure/nginx/" itemprop="url" title="nginx"><i class="ic i-flag"></i>nginx</a>
+      </span>
+    </div>
+    <a href="/procedure/frames/nginx/BasicConfig/" itemprop="url" title="Nginx 基础配置" class="btn">more...</a>
+  </div>
+</article>
+
+        
+<article class="item">
+  <div class="cover">
+    <a href="/procedure/application/common/typora/" itemprop="url" title="Typora使用文档"><img data-src="https://www.loliapi.com/acg/?557281"></a>
   </div>
   <div class="info">
     
@@ -326,7 +384,117 @@ Typora--&amp;gt; 主题，在下拉菜单中选择 xxx 主题
         
 <article class="item">
   <div class="cover">
-    <a href="/pdl/GoLang/GoLang%E5%9F%BA%E7%A1%80%E6%8B%93%E5%B1%95/" itemprop="url" title="GoLang冷知识"><img data-src="https://www.loliapi.com/acg/?381148"></a>
+    <a href="/vestige/about/Summary/" itemprop="url" title="网站简介"><img data-src="https://www.loliapi.com/acg/?77491"></a>
+  </div>
+  <div class="info">
+    
+<div class="meta">
+  <span class="item" title="创建时间：2026-03-18 21:30:25">
+    <span class="icon">
+      <i class="ic i-calendar"></i>
+    </span>
+    <time itemprop="dateCreated datePublished" datetime="2026-03-18T21:30:25+08:00">2026-03-18</time>
+  </span>
+  <span class="item" title="本文字数">
+    <span class="icon">
+      <i class="ic i-pen"></i>
+    </span>
+    <span>620</span>
+    <span class="text">字</span>
+  </span>
+  <span class="item" title="阅读时长">
+    <span class="icon">
+      <i class="ic i-clock"></i>
+    </span>
+    <span>1 分钟</span>
+  </span>
+</div>
+
+    <h3><a href="/vestige/about/Summary/" itemprop="url" title="网站简介">网站简介</a></h3>
+    <div class="excerpt">
+        # ☀️新手小白博主
+
+喜欢有条理和逻辑的行为，对于无法证实的高谈阔论不感冒，不喜画饼行为.
+初入职场的新手小白，对 web前端 ， javaWeb , Golang 等方向较感兴趣.
+喜欢编程，因为网络能接触到很多新的事物，而对网络的深入始于对编程的认知.
+不喜欢被认知局限束缚的感觉，好奇想去了解未知，沉迷探索未知，自由地随心而为.
+
+# 🌟博客简介
+
+始于 2022 MuBai Boat 用于记录学习，
+于 2026 重构，(吐槽一下三星硬盘，一年多就损坏了导致源数据丢失)
+静态生成 Hexo
+文档渲染 Markdown-it
+主题样式 霜月琉璃开源的 shoka 主题
+部署于...
+    </div>
+    <div class="meta footer">
+      <span>
+        <a href="/categories/vestige/%E7%AE%80%E4%BB%8B/" itemprop="url" title="简介"><i class="ic i-flag"></i>简介</a>
+      </span>
+    </div>
+    <a href="/vestige/about/Summary/" itemprop="url" title="网站简介" class="btn">more...</a>
+  </div>
+</article>
+
+        
+<article class="item">
+  <div class="cover">
+    <a href="/resource/links/friends/" itemprop="url" title="友情链接"><img data-src="https://www.loliapi.com/acg/?535514"></a>
+  </div>
+  <div class="info">
+    
+<div class="meta">
+  <span class="item" title="创建时间：2026-03-18 21:30:25">
+    <span class="icon">
+      <i class="ic i-calendar"></i>
+    </span>
+    <time itemprop="dateCreated datePublished" datetime="2026-03-18T21:30:25+08:00">2026-03-18</time>
+  </span>
+  <span class="item" title="本文字数">
+    <span class="icon">
+      <i class="ic i-pen"></i>
+    </span>
+    <span>1.3k</span>
+    <span class="text">字</span>
+  </span>
+  <span class="item" title="阅读时长">
+    <span class="icon">
+      <i class="ic i-clock"></i>
+    </span>
+    <span>1 分钟</span>
+  </span>
+</div>
+
+    <h3><a href="/resource/links/friends/" itemprop="url" title="友情链接">友情链接</a></h3>
+    <div class="excerpt">
+        # 本站信息
+
+站名： MuBai Boat
+站长： MuBai
+地址：点击前往
+标志：
+简介： 随心笔录 &amp;amp; 知识存档
+
+# 友链申请
+
+添加本站后，在本页留言，格式如下
+
+# 本站链接- site: MuBai Boat owner: MuBai url: https://blog.mubai.link/ desc: 随心笔录 &amp;amp; 知识存档 image: https://mubai-static.oss-cn-shanghai.aliyuncs.com/BackGround/photo01.jpg color: &quot;#0099CC&quot; #...
+    </div>
+    <div class="meta footer">
+      <span>
+        <a href="/categories/resource/links/" itemprop="url" title="links"><i class="ic i-flag"></i>links</a>
+      </span>
+    </div>
+    <a href="/resource/links/friends/" itemprop="url" title="友情链接" class="btn">more...</a>
+  </div>
+</article>
+
+        
+<article class="item">
+  <div class="cover">
+    <a href="/pdl/GoLang/GoLang%E5%9F%BA%E7%A1%80%E6%8B%93%E5%B1%95/" itemprop="url" title="GoLang冷知识"><img data-src="https://www.loliapi.com/acg/?414229"></a>
   </div>
   <div class="info">
     
@@ -401,170 +569,6 @@ Typora--&amp;gt; 主题，在下拉菜单中选择 xxx 主题
   </div>
 </article>
 
-        
-<article class="item">
-  <div class="cover">
-    <a href="/resource/links/friends/" itemprop="url" title="友情链接"><img data-src="https://www.loliapi.com/acg/?687315"></a>
-  </div>
-  <div class="info">
-    
-<div class="meta">
-  <span class="item" title="创建时间：2026-03-18 21:30:25">
-    <span class="icon">
-      <i class="ic i-calendar"></i>
-    </span>
-    <time itemprop="dateCreated datePublished" datetime="2026-03-18T21:30:25+08:00">2026-03-18</time>
-  </span>
-  <span class="item" title="本文字数">
-    <span class="icon">
-      <i class="ic i-pen"></i>
-    </span>
-    <span>1.3k</span>
-    <span class="text">字</span>
-  </span>
-  <span class="item" title="阅读时长">
-    <span class="icon">
-      <i class="ic i-clock"></i>
-    </span>
-    <span>1 分钟</span>
-  </span>
-</div>
-
-    <h3><a href="/resource/links/friends/" itemprop="url" title="友情链接">友情链接</a></h3>
-    <div class="excerpt">
-        # 本站信息
-
-站名： MuBai Boat
-站长： MuBai
-地址：点击前往
-标志：
-简介： 随心笔录 &amp;amp; 知识存档
-
-# 友链申请
-
-添加本站后，在本页留言，格式如下
-
-# 本站链接- site: MuBai Boat owner: MuBai url: https://blog.mubai.link/ desc: 随心笔录 &amp;amp; 知识存档 image: https://mubai-static.oss-cn-shanghai.aliyuncs.com/BackGround/photo01.jpg color: &quot;#0099CC&quot; #...
-    </div>
-    <div class="meta footer">
-      <span>
-        <a href="/categories/resource/links/" itemprop="url" title="links"><i class="ic i-flag"></i>links</a>
-      </span>
-    </div>
-    <a href="/resource/links/friends/" itemprop="url" title="友情链接" class="btn">more...</a>
-  </div>
-</article>
-
-        
-<article class="item">
-  <div class="cover">
-    <a href="/resource/links/resource-navigation/" itemprop="url" title="资源导航"><img data-src="https://www.loliapi.com/acg/?9028"></a>
-  </div>
-  <div class="info">
-    
-<div class="meta">
-  <span class="item" title="创建时间：2026-03-18 21:30:25">
-    <span class="icon">
-      <i class="ic i-calendar"></i>
-    </span>
-    <time itemprop="dateCreated datePublished" datetime="2026-03-18T21:30:25+08:00">2026-03-18</time>
-  </span>
-  <span class="item" title="本文字数">
-    <span class="icon">
-      <i class="ic i-pen"></i>
-    </span>
-    <span>703</span>
-    <span class="text">字</span>
-  </span>
-  <span class="item" title="阅读时长">
-    <span class="icon">
-      <i class="ic i-clock"></i>
-    </span>
-    <span>1 分钟</span>
-  </span>
-</div>
-
-    <h3><a href="/resource/links/resource-navigation/" itemprop="url" title="资源导航">资源导航</a></h3>
-    <div class="excerpt">
-        # 资源聚合
-
-GoFilm
-自动采集 &amp; 在线观影
-
-GoFilm项目仓库
-开源项目 &amp; 影视聚合
-
-炫猿导航
-资源搜索 &amp; 聚合导航
-
-书栈网
-IT资料 &amp; 书籍阅读
-    </div>
-    <div class="meta footer">
-      <span>
-        <a href="/categories/resource/links/" itemprop="url" title="links"><i class="ic i-flag"></i>links</a>
-      </span>
-    </div>
-    <a href="/resource/links/resource-navigation/" itemprop="url" title="资源导航" class="btn">more...</a>
-  </div>
-</article>
-
-        
-<article class="item">
-  <div class="cover">
-    <a href="/vestige/about/Summary/" itemprop="url" title="网站简介"><img data-src="https://www.loliapi.com/acg/?895323"></a>
-  </div>
-  <div class="info">
-    
-<div class="meta">
-  <span class="item" title="创建时间：2026-03-18 21:30:25">
-    <span class="icon">
-      <i class="ic i-calendar"></i>
-    </span>
-    <time itemprop="dateCreated datePublished" datetime="2026-03-18T21:30:25+08:00">2026-03-18</time>
-  </span>
-  <span class="item" title="本文字数">
-    <span class="icon">
-      <i class="ic i-pen"></i>
-    </span>
-    <span>620</span>
-    <span class="text">字</span>
-  </span>
-  <span class="item" title="阅读时长">
-    <span class="icon">
-      <i class="ic i-clock"></i>
-    </span>
-    <span>1 分钟</span>
-  </span>
-</div>
-
-    <h3><a href="/vestige/about/Summary/" itemprop="url" title="网站简介">网站简介</a></h3>
-    <div class="excerpt">
-        # ☀️新手小白博主
-
-喜欢有条理和逻辑的行为，对于无法证实的高谈阔论不感冒，不喜画饼行为.
-初入职场的新手小白，对 web前端 ， javaWeb , Golang 等方向较感兴趣.
-喜欢编程，因为网络能接触到很多新的事物，而对网络的深入始于对编程的认知.
-不喜欢被认知局限束缚的感觉，好奇想去了解未知，沉迷探索未知，自由地随心而为.
-
-# 🌟博客简介
-
-始于 2022 MuBai Boat 用于记录学习，
-于 2026 重构，(吐槽一下三星硬盘，一年多就损坏了导致源数据丢失)
-静态生成 Hexo
-文档渲染 Markdown-it
-主题样式 霜月琉璃开源的 shoka 主题
-部署于...
-    </div>
-    <div class="meta footer">
-      <span>
-        <a href="/categories/vestige/%E7%AE%80%E4%BB%8B/" itemprop="url" title="简介"><i class="ic i-flag"></i>简介</a>
-      </span>
-    </div>
-    <a href="/vestige/about/Summary/" itemprop="url" title="网站简介" class="btn">more...</a>
-  </div>
-</article>
-
     </div>
 
   </div>
@@ -572,7 +576,7 @@ IT资料 &amp; 书籍阅读
   
   <nav class="pagination">
     <div class="inner">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/2/"><i class="ic i-angle-right" aria-label="下一页"></i></a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/2/"><i class="ic i-angle-right" aria-label="下一页"></i></a>
     </div>
   </nav>
 
@@ -600,19 +604,19 @@ IT资料 &amp; 书籍阅读
 <nav class="state">
     <div class="item posts">
       <a href="/archives/">
-        <span class="count">26</span>
+        <span class="count">27</span>
         <span class="name">文章</span>
       </a>
     </div>
     <div class="item categories">
       <a href="/categories/">
-        <span class="count">18</span>
+        <span class="count">19</span>
         <span class="name">分类</span>
       </a>
     </div>
     <div class="item tags">
       <a href="/tags/">
-        <span class="count">17</span>
+        <span class="count">18</span>
         <span class="name">标签</span>
       </a>
     </div>
@@ -701,36 +705,12 @@ IT资料 &amp; 书籍阅读
   <li class="item">
     
 <div class="breadcrumb">
-<a href="/categories/resource/" title="分类于 资源">资源</a>
+<a href="/categories/procedure/" title="分类于 程序">程序</a>
 <i class="ic i-angle-right"></i>
-<a href="/categories/resource/links/" title="分类于 links">links</a>
+<a href="/categories/procedure/FrontEnd/" title="分类于 FrontEnd">FrontEnd</a>
 </div>
 
-    <span><a href="/resource/links/friends/" title="友情链接">友情链接</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/pdl/" title="分类于 编程">编程</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/pdl/GoLang/" title="分类于 GoLang">GoLang</a>
-</div>
-
-    <span><a href="/pdl/GoLang/GoLang%E6%8B%93%E5%B1%95/" title="GoLang入门笔记(下)">GoLang入门笔记(下)</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/pdl/" title="分类于 编程">编程</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/pdl/Vue/" title="分类于 Vue">Vue</a>
-</div>
-
-    <span><a href="/pdl/NodeJs/Vue/%E5%89%8D%E7%AB%AF%E6%96%87%E6%A1%A3/" title="前端常用API">前端常用API</a></span>
+    <span><a href="/pdl/NodeJs/FrontEnd/webKnowLedge/" title="前端基础知识">前端基础知识</a></span>
   </li>
 
       
@@ -740,11 +720,9 @@ IT资料 &amp; 书籍阅读
 <a href="/categories/procedure/" title="分类于 程序">程序</a>
 <i class="ic i-angle-right"></i>
 <a href="/categories/procedure/hexo/" title="分类于 hexo">hexo</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/procedure/hexo/Theme-Shoka-Documentation/" title="分类于 Theme Shoka Documentation">Theme Shoka Documentation</a>
 </div>
 
-    <span><a href="/procedure/application/hexo/shoka/dependents/" title="Step.1 依赖插件">Step.1 依赖插件</a></span>
+    <span><a href="/procedure/application/hexo/hexo-config-doc/" title="Hexo使用手册">Hexo使用手册</a></span>
   </li>
 
       
@@ -752,23 +730,9 @@ IT资料 &amp; 书籍阅读
     
 <div class="breadcrumb">
 <a href="/categories/pdl/" title="分类于 编程">编程</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/pdl/Vue/" title="分类于 Vue">Vue</a>
 </div>
 
-    <span><a href="/pdl/NodeJs/Vue/vite/" title="Vite入门">Vite入门</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/procedure/" title="分类于 程序">程序</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/procedure/OS/" title="分类于 OS">OS</a>
-</div>
-
-    <span><a href="/procedure/frames/os/linux/" title="Liux">Liux</a></span>
+    <span><a href="/pdl/NodeJs/Vue/Axios/" title="Axios用法及配置">Axios用法及配置</a></span>
   </li>
 
       
@@ -789,10 +753,10 @@ IT资料 &amp; 书籍阅读
 <div class="breadcrumb">
 <a href="/categories/procedure/" title="分类于 程序">程序</a>
 <i class="ic i-angle-right"></i>
-<a href="/categories/procedure/hexo/" title="分类于 hexo">hexo</a>
+<a href="/categories/procedure/Git/" title="分类于 Git">Git</a>
 </div>
 
-    <span><a href="/procedure/application/hexo/hexo-config-doc/" title="Hexo使用手册">Hexo使用手册</a></span>
+    <span><a href="/procedure/frames/git/Git/" title="Git常用指令">Git常用指令</a></span>
   </li>
 
       
@@ -801,10 +765,24 @@ IT资料 &amp; 书籍阅读
 <div class="breadcrumb">
 <a href="/categories/procedure/" title="分类于 程序">程序</a>
 <i class="ic i-angle-right"></i>
-<a href="/categories/procedure/MySQL/" title="分类于 MySQL">MySQL</a>
+<a href="/categories/procedure/hexo/" title="分类于 hexo">hexo</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/procedure/hexo/Theme-Shoka-Documentation/" title="分类于 Theme Shoka Documentation">Theme Shoka Documentation</a>
 </div>
 
-    <span><a href="/procedure/frames/others/mysql/NodeQuerySQL/" title="Sql 记录">Sql 记录</a></span>
+    <span><a href="/procedure/application/hexo/shoka/dependents/" title="Step.1 依赖插件">Step.1 依赖插件</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/procedure/" title="分类于 程序">程序</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/procedure/OS/" title="分类于 OS">OS</a>
+</div>
+
+    <span><a href="/procedure/frames/os/linux/" title="Liux">Liux</a></span>
   </li>
 
       
@@ -816,7 +794,31 @@ IT资料 &amp; 书籍阅读
 <a href="/categories/pdl/Vue/" title="分类于 Vue">Vue</a>
 </div>
 
-    <span><a href="/pdl/NodeJs/Vue/vue3%E6%9E%84%E5%BB%BA/" title="Vue项目构建">Vue项目构建</a></span>
+    <span><a href="/pdl/NodeJs/Vue/vue3/" title="Vue3语法变化">Vue3语法变化</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/pdl/" title="分类于 编程">编程</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/pdl/Vue/" title="分类于 Vue">Vue</a>
+</div>
+
+    <span><a href="/pdl/NodeJs/Vue/vite/" title="Vite入门">Vite入门</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/pdl/" title="分类于 编程">编程</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/pdl/GoLang/" title="分类于 GoLang">GoLang</a>
+</div>
+
+    <span><a href="/pdl/GoLang/GoLang%E6%8B%93%E5%B1%95/" title="GoLang入门笔记(下)">GoLang入门笔记(下)</a></span>
   </li>
 
   </ul>
@@ -841,12 +843,12 @@ IT资料 &amp; 书籍阅读
     <span class="post-meta-item-icon">
       <i class="ic i-chart-area"></i>
     </span>
-    <span title="站点总字数">326k 字</span>
+    <span title="站点总字数">333k 字</span>
 
     <span class="post-meta-item-icon">
       <i class="ic i-coffee"></i>
     </span>
-    <span title="站点阅读时长">4:56</span>
+    <span title="站点阅读时长">5:03</span>
   </div>
 </div>
 

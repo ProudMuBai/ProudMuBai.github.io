@@ -1,0 +1,722 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#FFF">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+<link rel="icon" type="image/ico" sizes="32x32" href="/images/favicon.ico">
+  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+<link rel="alternate" type="application/rss+xml" title="源夢" href="https://blog.mubai.link/rss.xml" />
+<link rel="alternate" type="application/atom+xml" title="源夢" href="https://blog.mubai.link/atom.xml" />
+<link rel="alternate" type="application/json" title="源夢" href="https://blog.mubai.link/feed.json" />
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Mulish:300,300italic,400,400italic,700,700italic%7CFredericka%20the%20Great:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20JP:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20SC:300,300italic,400,400italic,700,700italic%7CInconsolata:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+
+<link rel="stylesheet" href="/css/app.css?v=0.2.5">
+
+  
+  <meta name="keywords" content="说明文档,Nginx" />
+
+
+<link rel="canonical" href="https://blog.mubai.link/procedure/frames/nginx/BasicConfig/">
+
+
+
+  <title>
+Nginx 基础配置 - nginx - 程序 |
+MuBai Boat = 源夢 = 人生如逆旅, 我亦是行人</title>
+<meta name="generator" content="Hexo 8.1.1"></head>
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div id="loading">
+    <div class="cat">
+      <div class="body"></div>
+      <div class="head">
+        <div class="face"></div>
+      </div>
+      <div class="foot">
+        <div class="tummy-end"></div>
+        <div class="bottom"></div>
+        <div class="legs left"></div>
+        <div class="legs right"></div>
+      </div>
+      <div class="paw">
+        <div class="hands left"></div>
+        <div class="hands right"></div>
+      </div>
+    </div>
+  </div>
+  <div id="container">
+    <header id="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="inner">
+        <div id="brand">
+          <div class="pjax">
+          
+  <h1 itemprop="name headline">Nginx 基础配置
+  </h1>
+  
+<div class="meta">
+  <span class="item" title="创建时间：2026-04-12 23:55:36">
+    <span class="icon">
+      <i class="ic i-calendar"></i>
+    </span>
+    <span class="text">发表于</span>
+    <time itemprop="dateCreated datePublished" datetime="2026-04-12T23:55:36+08:00">2026-04-12</time>
+  </span>
+  <span class="item" title="本文字数">
+    <span class="icon">
+      <i class="ic i-pen"></i>
+    </span>
+    <span class="text">本文字数</span>
+    <span>7.7k</span>
+    <span class="text">字</span>
+  </span>
+  <span class="item" title="阅读时长">
+    <span class="icon">
+      <i class="ic i-clock"></i>
+    </span>
+    <span class="text">阅读时长</span>
+    <span>7 分钟</span>
+  </span>
+</div>
+
+
+          </div>
+        </div>
+        <nav id="nav">
+  <div class="inner">
+    <div class="toggle">
+      <div class="lines" aria-label="切换导航栏">
+        <span class="line"></span>
+        <span class="line"></span>
+        <span class="line"></span>
+      </div>
+    </div>
+    <ul class="menu">
+      <li class="item title"><a href="/" rel="start">MuBai Boat</a></li>
+    </ul>
+    <ul class="right">
+      <li class="item theme">
+        <i class="ic i-sun"></i>
+      </li>
+      <li class="item search">
+        <i class="ic i-search"></i>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+      </div>
+      <div id="imgs" class="pjax">
+        <ul>
+          <li class="item" data-background-image="https://www.loliapi.com/acg/?715369"></li>
+          <li class="item" data-background-image="https://www.loliapi.com/acg/?227059"></li>
+          <li class="item" data-background-image="https://www.loliapi.com/acg/?433344"></li>
+          <li class="item" data-background-image="https://www.loliapi.com/acg/?43543"></li>
+          <li class="item" data-background-image="https://www.loliapi.com/acg/?453812"></li>
+          <li class="item" data-background-image="https://www.loliapi.com/acg/?703512"></li>
+        </ul>
+      </div>
+    </header>
+    <div id="waves">
+      <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+        <defs>
+          <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+        </defs>
+        <g class="parallax">
+          <use xlink:href="#gentle-wave" x="48" y="0" />
+          <use xlink:href="#gentle-wave" x="48" y="3" />
+          <use xlink:href="#gentle-wave" x="48" y="5" />
+          <use xlink:href="#gentle-wave" x="48" y="7" />
+        </g>
+      </svg>
+    </div>
+    <main>
+      <div class="inner">
+        <div id="main" class="pjax">
+          
+  <div class="article wrap">
+    
+<div class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
+<i class="ic i-home"></i>
+<span><a href="/">首页</a></span><i class="ic i-angle-right"></i>
+<span  itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="/categories/procedure/" itemprop="item" rel="index" title="分类于 程序"><span itemprop="name">程序</span></a>
+<meta itemprop="position" content="1" /></span>
+<i class="ic i-angle-right"></i>
+<span  class="current" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="/categories/procedure/nginx/" itemprop="item" rel="index" title="分类于 nginx"><span itemprop="name">nginx</span></a>
+<meta itemprop="position" content="2" /></span>
+</div>
+
+    <article itemscope itemtype="http://schema.org/Article" class="post block" lang="zh-CN">
+  <link itemprop="mainEntityOfPage" href="https://blog.mubai.link/procedure/frames/nginx/BasicConfig/">
+
+  <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="image" content="/images/avatar.jpg">
+    <meta itemprop="name" content="MuBai">
+    <meta itemprop="description" content="人生如逆旅, 我亦是行人, 随心笔录 & 知识存档">
+  </span>
+
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="源夢">
+  </span>
+
+  <div class="body md" itemprop="articleBody">
+    
+
+    <h1 id="nginx-基础配置"><a class="anchor" href="#nginx-基础配置">#</a> Nginx 基础配置</h1>
+<h2 id="1-nginx-docker-启动"><a class="anchor" href="#1-nginx-docker-启动">#</a> 1. Nginx Docker 启动</h2>
+<h3 id="docker-run-部署"><a class="anchor" href="#docker-run-部署">#</a> docker run 部署</h3>
+<ol>
+<li>
+<p>拉取镜像:    <code>docker pull nginx:latest</code></p>
+</li>
+<li>
+<p>创建宿主机目录:   <code>mkdir -p /opt/nginx/{conf,conf.d,html,logs}</code></p>
+</li>
+<li>
+<p>获取 Nginx 默认配置文件</p>
+<ul>
+<li>
+<p>启动临时容器:   <code>docker run --name nginx-temp -d nginx:latest</code></p>
+</li>
+<li>
+<p>容器内的配置文件和配置目录复制到宿主机</p>
+<ul>
+<li>
+<p><code>docker cp nginx-temp:/etc/nginx/nginx.conf /opt/nginx/conf/</code></p>
+</li>
+<li>
+<p><code>docker cp nginx-temp:/etc/nginx/conf.d /opt/nginx/conf/</code></p>
+</li>
+<li>
+<p><code>docker cp nginx-temp:/usr/share/nginx/html/. /opt/nginx/html/</code></p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>停止并删除临时容器</p>
+<ul>
+<li><code>docker stop nginx-temp &amp;&amp; docker rm nginx-temp</code></li>
+</ul>
+</li>
+<li>
+<p>启动 Nginx 容器</p>
+</li>
+</ol>
+<figure class="highlight bash"><figcaption data-lang="bash"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token function">docker</span> run <span class="token parameter variable">-d</span> <span class="token punctuation">\</span></pre></td></tr><tr><td data-num="2"></td><td><pre>  <span class="token parameter variable">--name</span> nginx <span class="token punctuation">\</span></pre></td></tr><tr><td data-num="3"></td><td><pre>  <span class="token parameter variable">--restart</span><span class="token operator">=</span>always <span class="token punctuation">\</span></pre></td></tr><tr><td data-num="4"></td><td><pre>  <span class="token parameter variable">-p</span> <span class="token number">80</span>:80 <span class="token punctuation">\</span></pre></td></tr><tr><td data-num="5"></td><td><pre>  <span class="token parameter variable">-v</span> /opt/nginx/conf/nginx.conf:/etc/nginx/nginx.conf <span class="token punctuation">\</span></pre></td></tr><tr><td data-num="6"></td><td><pre>  <span class="token parameter variable">-v</span> /opt/nginx/conf/conf.d:/etc/nginx/conf.d <span class="token punctuation">\</span></pre></td></tr><tr><td data-num="7"></td><td><pre>  <span class="token parameter variable">-v</span> /opt/nginx/html:/usr/share/nginx/html <span class="token punctuation">\</span></pre></td></tr><tr><td data-num="8"></td><td><pre>  <span class="token parameter variable">-v</span> /opt/nginx/logs:/var/log/nginx <span class="token punctuation">\</span></pre></td></tr><tr><td data-num="9"></td><td><pre>  nginx:latest</pre></td></tr></table></figure><h3 id="docker-compose-部署"><a class="anchor" href="#docker-compose-部署">#</a> docker compose 部署</h3>
+<ol>
+<li>创建 docker-compose.yml 文件</li>
+</ol>
+<figure class="highlight yaml"><figcaption data-lang="YAML"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token comment"># 目录下创建 docker-compose.yml 文件 &lt; 创建 /opt/nginx/ 等相关目录 ></span></pre></td></tr><tr><td data-num="2"></td><td><pre><span class="token key atrule">version</span><span class="token punctuation">:</span> <span class="token string">'3'</span></pre></td></tr><tr><td data-num="3"></td><td><pre><span class="token key atrule">services</span><span class="token punctuation">:</span></pre></td></tr><tr><td data-num="4"></td><td><pre>  <span class="token key atrule">nginx</span><span class="token punctuation">:</span></pre></td></tr><tr><td data-num="5"></td><td><pre>    <span class="token key atrule">image</span><span class="token punctuation">:</span> nginx<span class="token punctuation">:</span>latest</pre></td></tr><tr><td data-num="6"></td><td><pre>    <span class="token key atrule">container_name</span><span class="token punctuation">:</span> nginx</pre></td></tr><tr><td data-num="7"></td><td><pre>    <span class="token key atrule">restart</span><span class="token punctuation">:</span> always</pre></td></tr><tr><td data-num="8"></td><td><pre>    <span class="token key atrule">ports</span><span class="token punctuation">:</span></pre></td></tr><tr><td data-num="9"></td><td><pre>      <span class="token punctuation">-</span> <span class="token string">"80:80"</span></pre></td></tr><tr><td data-num="10"></td><td><pre>    <span class="token key atrule">volumes</span><span class="token punctuation">:</span></pre></td></tr><tr><td data-num="11"></td><td><pre>      <span class="token punctuation">-</span> /opt/nginx/conf/nginx.conf<span class="token punctuation">:</span>/etc/nginx/nginx.conf</pre></td></tr><tr><td data-num="12"></td><td><pre>      <span class="token punctuation">-</span> /opt/nginx/conf/conf.d<span class="token punctuation">:</span>/etc/nginx/conf.d</pre></td></tr><tr><td data-num="13"></td><td><pre>      <span class="token punctuation">-</span> /opt/nginx/html<span class="token punctuation">:</span>/usr/share/nginx/html</pre></td></tr><tr><td data-num="14"></td><td><pre>      <span class="token punctuation">-</span> /opt/nginx/logs<span class="token punctuation">:</span>/var/log/nginx</pre></td></tr></table></figure><ol start="2">
+<li>启动服务</li>
+</ol>
+<figure class="highlight bash"><figcaption data-lang="bash"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token comment"># 在 docker-compose.yml 文件目录下执行以下命令</span></pre></td></tr><tr><td data-num="2"></td><td><pre><span class="token function">docker-compose</span> up <span class="token parameter variable">-d</span></pre></td></tr></table></figure><ol start="3">
+<li>查看容器状态，验证安装</li>
+</ol>
+<figure class="highlight bash"><figcaption data-lang="bash"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token function">docker</span> <span class="token function">ps</span> <span class="token operator">|</span> <span class="token function">grep</span> nginx</pre></td></tr></table></figure><h2 id="2nginx-ssl-配置"><a class="anchor" href="#2nginx-ssl-配置">#</a> 2.Nginx SSL 配置</h2>
+<h4 id="1nginx-config配置"><a class="anchor" href="#1nginx-config配置">#</a> 1.Nginx config 配置</h4>
+<div class="note info">
+<p>配置 HTTP 到 HTTPS 的重定向以及 HTTPS 服务</p>
+</div>
+<figure class="highlight bash"><figcaption data-lang="bash"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token comment">#user  root;</span></pre></td></tr><tr><td data-num="2"></td><td><pre>worker_processes  <span class="token number">1</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="3"></td><td><pre>events <span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="4"></td><td><pre>    worker_connections  <span class="token number">1024</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="5"></td><td><pre><span class="token punctuation">&#125;</span></pre></td></tr><tr><td data-num="6"></td><td><pre>http <span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="7"></td><td><pre>    include       mime.types<span class="token punctuation">;</span></pre></td></tr><tr><td data-num="8"></td><td><pre>    default_type  application/octet-stream<span class="token punctuation">;</span></pre></td></tr><tr><td data-num="9"></td><td><pre>    sendfile        on<span class="token punctuation">;</span></pre></td></tr><tr><td data-num="10"></td><td><pre>    keepalive_timeout  <span class="token number">65</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="11"></td><td><pre>    client_max_body_size 200m<span class="token punctuation">;</span></pre></td></tr><tr><td data-num="12"></td><td><pre></pre></td></tr><tr><td data-num="13"></td><td><pre></pre></td></tr><tr><td data-num="14"></td><td><pre>    <span class="token comment"># HTTP 服务器，用于处理 Certbot 验证和重定向</span></pre></td></tr><tr><td data-num="15"></td><td><pre>    server <span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="16"></td><td><pre>        listen <span class="token number">80</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="17"></td><td><pre>        server_name your_domain.com www.your_domain.com<span class="token punctuation">;</span> <span class="token comment"># 域名解析</span></pre></td></tr><tr><td data-num="18"></td><td><pre></pre></td></tr><tr><td data-num="19"></td><td><pre>        <span class="token comment"># Certbot 验证路径</span></pre></td></tr><tr><td data-num="20"></td><td><pre>        location /.well-known/acme-challenge/ <span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="21"></td><td><pre>            root /var/www/certbot<span class="token punctuation">;</span></pre></td></tr><tr><td data-num="22"></td><td><pre>        <span class="token punctuation">&#125;</span></pre></td></tr><tr><td data-num="23"></td><td><pre></pre></td></tr><tr><td data-num="24"></td><td><pre>        <span class="token comment"># 其余请求重定向到 HTTPS</span></pre></td></tr><tr><td data-num="25"></td><td><pre>        location / <span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="26"></td><td><pre>            <span class="token builtin class-name">return</span> <span class="token number">301</span> https://<span class="token variable">$host</span><span class="token variable">$request_uri</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="27"></td><td><pre>        <span class="token punctuation">&#125;</span></pre></td></tr><tr><td data-num="28"></td><td><pre>    <span class="token punctuation">&#125;</span></pre></td></tr><tr><td data-num="29"></td><td><pre>    </pre></td></tr><tr><td data-num="30"></td><td><pre>    <span class="token comment"># HTTPS 服务器</span></pre></td></tr><tr><td data-num="31"></td><td><pre>    server <span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="32"></td><td><pre>        listen <span class="token number">443</span> ssl<span class="token punctuation">;</span></pre></td></tr><tr><td data-num="33"></td><td><pre>        server_name your_domain.com www.your_domain.com<span class="token punctuation">;</span>	<span class="token comment"># 域名解析</span></pre></td></tr><tr><td data-num="34"></td><td><pre></pre></td></tr><tr><td data-num="35"></td><td><pre>        <span class="token comment"># Let's Encrypt 证书路径</span></pre></td></tr><tr><td data-num="36"></td><td><pre>        ssl_certificate /etc/letsencrypt/live/your_domain.com/fullchain.pem<span class="token punctuation">;</span></pre></td></tr><tr><td data-num="37"></td><td><pre>        ssl_certificate_key /etc/letsencrypt/live/your_domain.com/privkey.pem<span class="token punctuation">;</span></pre></td></tr><tr><td data-num="38"></td><td><pre></pre></td></tr><tr><td data-num="39"></td><td><pre>        <span class="token comment"># SSL 优化配置</span></pre></td></tr><tr><td data-num="40"></td><td><pre>        ssl_protocols TLSv1.2 TLSv1.3<span class="token punctuation">;</span>	<span class="token comment"># 指定服务器接受的 TLS 版本</span></pre></td></tr><tr><td data-num="41"></td><td><pre>        ssl_ciphers <span class="token string">'ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES128-GCM-SHA256'</span><span class="token punctuation">;</span>	<span class="token comment"># 指定服务器的握手加密算法套件列表</span></pre></td></tr><tr><td data-num="42"></td><td><pre>        ssl_session_cache shared:SSL:10m<span class="token punctuation">;</span>	<span class="token comment">#  SSL 会话缓存，指定 TLS 会话参数存储大小</span></pre></td></tr><tr><td data-num="43"></td><td><pre>        ssl_session_timeout 1d<span class="token punctuation">;</span>	<span class="token comment"># 设置缓存的 TLS 会话有效期为 1 天</span></pre></td></tr><tr><td data-num="44"></td><td><pre>		</pre></td></tr><tr><td data-num="45"></td><td><pre>		<span class="token comment"># 指定根目录文件位置和首页页面</span></pre></td></tr><tr><td data-num="46"></td><td><pre>        location / <span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="47"></td><td><pre>            root /usr/share/nginx/html<span class="token punctuation">;</span></pre></td></tr><tr><td data-num="48"></td><td><pre>            index index.html<span class="token punctuation">;</span></pre></td></tr><tr><td data-num="49"></td><td><pre>        <span class="token punctuation">&#125;</span></pre></td></tr><tr><td data-num="50"></td><td><pre></pre></td></tr><tr><td data-num="51"></td><td><pre>        <span class="token comment"># 同样保留验证路径</span></pre></td></tr><tr><td data-num="52"></td><td><pre>        location /.well-known/acme-challenge/ <span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="53"></td><td><pre>            root /var/www/certbot<span class="token punctuation">;</span></pre></td></tr><tr><td data-num="54"></td><td><pre>        <span class="token punctuation">&#125;</span></pre></td></tr><tr><td data-num="55"></td><td><pre>        </pre></td></tr><tr><td data-num="56"></td><td><pre>        <span class="token comment"># 错误信息页面配置</span></pre></td></tr><tr><td data-num="57"></td><td><pre>        error_page   <span class="token number">500</span> <span class="token number">502</span> <span class="token number">503</span> <span class="token number">504</span>  /50x.html<span class="token punctuation">;</span></pre></td></tr><tr><td data-num="58"></td><td><pre>        location <span class="token operator">=</span> /50x.html <span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="59"></td><td><pre>            root   html<span class="token punctuation">;</span></pre></td></tr><tr><td data-num="60"></td><td><pre>        <span class="token punctuation">&#125;</span></pre></td></tr><tr><td data-num="61"></td><td><pre>    <span class="token punctuation">&#125;</span></pre></td></tr><tr><td data-num="62"></td><td><pre><span class="token punctuation">&#125;</span></pre></td></tr></table></figure><h4 id="2-nginx-容器信息配置"><a class="anchor" href="#2-nginx-容器信息配置">#</a> 2. Nginx 容器信息配置</h4>
+<div class="note info">
+<p>编写  <code>docker-compose.yml</code>  , 配置  <code>nginx</code>  相关信息</p>
+</div>
+<figure class="highlight yaml"><figcaption data-lang="YAML"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token key atrule">version</span><span class="token punctuation">:</span> <span class="token string">'3.8'</span></pre></td></tr><tr><td data-num="2"></td><td><pre><span class="token key atrule">services</span><span class="token punctuation">:</span></pre></td></tr><tr><td data-num="3"></td><td><pre>  <span class="token key atrule">nginx</span><span class="token punctuation">:</span></pre></td></tr><tr><td data-num="4"></td><td><pre>    <span class="token key atrule">image</span><span class="token punctuation">:</span> nginx<span class="token punctuation">:</span>alpine</pre></td></tr><tr><td data-num="5"></td><td><pre>    <span class="token key atrule">container_name</span><span class="token punctuation">:</span> nginx</pre></td></tr><tr><td data-num="6"></td><td><pre>    <span class="token key atrule">ports</span><span class="token punctuation">:</span></pre></td></tr><tr><td data-num="7"></td><td><pre>      <span class="token punctuation">-</span> <span class="token string">"80:80"</span></pre></td></tr><tr><td data-num="8"></td><td><pre>      <span class="token punctuation">-</span> <span class="token string">"443:443"</span></pre></td></tr><tr><td data-num="9"></td><td><pre>    <span class="token key atrule">volumes</span><span class="token punctuation">:</span></pre></td></tr><tr><td data-num="10"></td><td><pre>      <span class="token punctuation">-</span> ./conf.d<span class="token punctuation">:</span>/etc/nginx/conf.d</pre></td></tr><tr><td data-num="11"></td><td><pre>      <span class="token punctuation">-</span> ./cert<span class="token punctuation">:</span>/etc/letsencrypt</pre></td></tr><tr><td data-num="12"></td><td><pre>      <span class="token punctuation">-</span> ./html<span class="token punctuation">:</span>/usr/share/nginx/html</pre></td></tr><tr><td data-num="13"></td><td><pre>      <span class="token punctuation">-</span> certbot_www<span class="token punctuation">:</span>/var/www/certbot</pre></td></tr><tr><td data-num="14"></td><td><pre>    <span class="token key atrule">restart</span><span class="token punctuation">:</span> unless<span class="token punctuation">-</span>stopped</pre></td></tr></table></figure><h4 id="3ssl证书申请"><a class="anchor" href="#3ssl证书申请">#</a> 3.SSL 证书申请</h4>
+<div class="note info">
+<p>Let's Encrypt 免费证书</p>
+<ul>
+<li>Certbot 官方工具，开箱即用，插件少</li>
+<li><span class="exturl" data-url="aHR0cDovL2FjbWUuc2g=">acme.sh</span> 轻量级工具，自定义灵活度高</li>
+</ul>
+</div>
+<table>
+<thead>
+<tr>
+<th>特性</th>
+<th>Certbot</th>
+<th><span class="exturl" data-url="aHR0cDovL2FjbWUuc2g=">acme.sh</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>实现语言</td>
+<td>Python</td>
+<td>Shell</td>
+</tr>
+<tr>
+<td>安装方式</td>
+<td>系统包管理器 (apt/yum)</td>
+<td>官方脚本 ( <code>curl</code> )</td>
+</tr>
+<tr>
+<td>Nginx 集成</td>
+<td>官方插件，自动修改配置</td>
+<td>需手动指定证书路径和重载命令</td>
+</tr>
+<tr>
+<td>DNS 验证</td>
+<td>支持，但插件相对较少</td>
+<td>支持广泛，几乎涵盖所有主流 DNS 服务商</td>
+</tr>
+<tr>
+<td>通配符证书</td>
+<td>支持 (需 DNS 验证)</td>
+<td>支持，且配置更为简便</td>
+</tr>
+<tr>
+<td>适用场景</td>
+<td>追求开箱即用，希望与 Nginx 深度集成的用户</td>
+<td>追求轻量、灵活，或需要申请通配符证书的高级用户</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Certbot 配置 :</strong></p>
+<ul>
+<li>在  <code>docker-compose.yml</code>  中添加  <code>certbot</code>  容器配置</li>
+<li><code>docker compose up -d</code>  启动服务容器</li>
+</ul>
+<figure class="highlight yaml"><figcaption data-lang="YAML"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token comment"># 完整配置</span></pre></td></tr><tr><td data-num="2"></td><td><pre><span class="token key atrule">version</span><span class="token punctuation">:</span> <span class="token string">'3.8'</span></pre></td></tr><tr><td data-num="3"></td><td><pre><span class="token key atrule">services</span><span class="token punctuation">:</span></pre></td></tr><tr><td data-num="4"></td><td><pre>  <span class="token key atrule">nginx</span><span class="token punctuation">:</span></pre></td></tr><tr><td data-num="5"></td><td><pre>    <span class="token key atrule">image</span><span class="token punctuation">:</span> nginx<span class="token punctuation">:</span>alpine</pre></td></tr><tr><td data-num="6"></td><td><pre>    <span class="token key atrule">container_name</span><span class="token punctuation">:</span> nginx</pre></td></tr><tr><td data-num="7"></td><td><pre>    <span class="token key atrule">ports</span><span class="token punctuation">:</span></pre></td></tr><tr><td data-num="8"></td><td><pre>      <span class="token punctuation">-</span> <span class="token string">"80:80"</span></pre></td></tr><tr><td data-num="9"></td><td><pre>      <span class="token punctuation">-</span> <span class="token string">"443:443"</span></pre></td></tr><tr><td data-num="10"></td><td><pre>    <span class="token key atrule">volumes</span><span class="token punctuation">:</span></pre></td></tr><tr><td data-num="11"></td><td><pre>      <span class="token punctuation">-</span> ./conf.d<span class="token punctuation">:</span>/etc/nginx/conf.d</pre></td></tr><tr><td data-num="12"></td><td><pre>      <span class="token punctuation">-</span> ./cert<span class="token punctuation">:</span>/etc/letsencrypt</pre></td></tr><tr><td data-num="13"></td><td><pre>      <span class="token punctuation">-</span> ./html<span class="token punctuation">:</span>/usr/share/nginx/html</pre></td></tr><tr><td data-num="14"></td><td><pre>      <span class="token punctuation">-</span> certbot_www<span class="token punctuation">:</span>/var/www/certbot</pre></td></tr><tr><td data-num="15"></td><td><pre>    <span class="token key atrule">restart</span><span class="token punctuation">:</span> unless<span class="token punctuation">-</span>stopped</pre></td></tr><tr><td data-num="16"></td><td><pre>    <span class="token key atrule">depends_on</span><span class="token punctuation">:</span></pre></td></tr><tr><td data-num="17"></td><td><pre>      <span class="token punctuation">-</span> certbot</pre></td></tr><tr><td data-num="18"></td><td><pre></pre></td></tr><tr><td data-num="19"></td><td><pre>  <span class="token key atrule">certbot</span><span class="token punctuation">:</span></pre></td></tr><tr><td data-num="20"></td><td><pre>    <span class="token key atrule">image</span><span class="token punctuation">:</span> certbot/certbot</pre></td></tr><tr><td data-num="21"></td><td><pre>    <span class="token key atrule">container_name</span><span class="token punctuation">:</span> certbot</pre></td></tr><tr><td data-num="22"></td><td><pre>    <span class="token key atrule">volumes</span><span class="token punctuation">:</span></pre></td></tr><tr><td data-num="23"></td><td><pre>      <span class="token punctuation">-</span> ./cert<span class="token punctuation">:</span>/etc/letsencrypt</pre></td></tr><tr><td data-num="24"></td><td><pre>      <span class="token punctuation">-</span> certbot_www<span class="token punctuation">:</span>/var/www/certbot</pre></td></tr><tr><td data-num="25"></td><td><pre>    <span class="token comment"># 首次启动时获取证书，然后进入循环检查续期</span></pre></td></tr><tr><td data-num="26"></td><td><pre>    <span class="token key atrule">command</span><span class="token punctuation">:</span> <span class="token punctuation">></span><span class="token scalar string"></pre></td></tr><tr><td data-num="27"></td><td><pre>      sh -c '</pre></td></tr><tr><td data-num="28"></td><td><pre>      if [ ! -f "/etc/letsencrypt/live/your_domain.com/fullchain.pem" ]; then</pre></td></tr><tr><td data-num="29"></td><td><pre>        certbot certonly --webroot -w /var/www/certbot -d your_domain.com -d www.your_domain.com --email your_email@example.com --agree-tos --noninteractive;</pre></td></tr><tr><td data-num="30"></td><td><pre>      fi;</pre></td></tr><tr><td data-num="31"></td><td><pre>      while :; do</pre></td></tr><tr><td data-num="32"></td><td><pre>        sleep 12h;</pre></td></tr><tr><td data-num="33"></td><td><pre>        certbot renew;</pre></td></tr><tr><td data-num="34"></td><td><pre>      done'</span></pre></td></tr><tr><td data-num="35"></td><td><pre>    <span class="token key atrule">restart</span><span class="token punctuation">:</span> unless<span class="token punctuation">-</span>stopped</pre></td></tr><tr><td data-num="36"></td><td><pre></pre></td></tr><tr><td data-num="37"></td><td><pre><span class="token key atrule">volumes</span><span class="token punctuation">:</span></pre></td></tr><tr><td data-num="38"></td><td><pre>  certbot_www<span class="token punctuation">:</span></pre></td></tr></table></figure><p><strong><span class="exturl" data-url="aHR0cDovL2FjbWUuc2g=">acme.sh</span> 配置 :</strong></p>
+<ul>
+<li>
+<p>安装 <span class="exturl" data-url="aHR0cDovL2FjbWUuc2g=">acme.sh</span> :   <code>curl https://get.acme.sh | sh -s email=my@example.com</code></p>
+</li>
+<li>
+<p>重新加载 shell 配置文件，让 acme.sh 命令生效  :   <code>source ~/.bashrc</code></p>
+</li>
+<li>
+<p>证书申请 :</p>
+<ul>
+<li>
+<p>HTTP 验证 (适合有 Web 服务器的用户) :   <code>acme.sh --issue -d example.com -d www.example.com --webroot /home/wwwroot/example.com/</code></p>
+<ul>
+<li>优点：简单，无需配置 API。</li>
+<li>缺点：无法申请泛域名证书，(如  <code>*.example.com</code> )</li>
+</ul>
+</li>
+<li>
+<p>DNS API 验证 (支持泛域名), 以 Cloudflare 为例</p>
+<ul>
+<li>设置环境变量:   <code>export CF_Token=&quot;Cloudflare_API_Token&quot;</code>  ,  <code>export CF_Account_ID=&quot;Cloudflare_Account_ID&quot;</code></li>
+</ul>
+</li>
+<li>
+<p>签发证书:   <code>acme.sh --issue --dns dns_cf -d example.com -d &quot;*.example.com&quot;</code></p>
+</li>
+<li>
+<p>安装证书到 Nginx</p>
+</li>
+<li>
+<p>验证自动续期</p>
+</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight bash"><figcaption data-lang="bash"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token comment"># 安装 acme.sh</span></pre></td></tr><tr><td data-num="2"></td><td><pre><span class="token function">curl</span> https://get.acme.sh <span class="token operator">|</span> <span class="token function">sh</span> <span class="token parameter variable">-s</span> <span class="token assign-left variable">email</span><span class="token operator">=</span>my@example.com</pre></td></tr><tr><td data-num="3"></td><td><pre></pre></td></tr><tr><td data-num="4"></td><td><pre><span class="token comment"># 证书申请: HTTP 验证，acme.sh 会自动在网站根目录生成一个验证文件</span></pre></td></tr><tr><td data-num="5"></td><td><pre>acme.sh <span class="token parameter variable">--issue</span> <span class="token parameter variable">-d</span> example.com <span class="token parameter variable">-d</span> www.example.com <span class="token parameter variable">--webroot</span> /home/wwwroot/example.com/ <span class="token parameter variable">--nginx</span>  <span class="token comment"># --webroot 设置网站根目录</span></pre></td></tr><tr><td data-num="6"></td><td><pre></pre></td></tr><tr><td data-num="7"></td><td><pre></pre></td></tr><tr><td data-num="8"></td><td><pre><span class="token comment"># 证书申请:  DNS API 验证（推荐，支持泛域名</span></pre></td></tr><tr><td data-num="9"></td><td><pre></pre></td></tr><tr><td data-num="10"></td><td><pre><span class="token comment"># 获取 Cloudflare API Token</span></pre></td></tr><tr><td data-num="11"></td><td><pre><span class="token comment"># 使用 API Token, 创建一个专门用于编辑 DNS 的令牌。</span></pre></td></tr><tr><td data-num="12"></td><td><pre><span class="token comment"># 登录 Cloudflare 控制台。</span></pre></td></tr><tr><td data-num="13"></td><td><pre><span class="token comment"># 点击右上角头像 -> 我的个人资料 (My Profile) -> API 令牌 (API Tokens)。</span></pre></td></tr><tr><td data-num="14"></td><td><pre><span class="token comment"># 点击 创建令牌 (Create Token)。</span></pre></td></tr><tr><td data-num="15"></td><td><pre><span class="token comment"># 选择 编辑区域 DNS (Edit zone DNS) 模板（点击 “使用模板”）。</span></pre></td></tr><tr><td data-num="16"></td><td><pre><span class="token comment"># 配置权限：</span></pre></td></tr><tr><td data-num="17"></td><td><pre><span class="token comment"># 权限：保持默认的 Zone -> DNS -> Edit。</span></pre></td></tr><tr><td data-num="18"></td><td><pre><span class="token comment"># 区域资源：选择 特定区域 (Specific zone)，在下拉菜单中选中你要签发证书的域名（例如 example.com）。</span></pre></td></tr><tr><td data-num="19"></td><td><pre><span class="token comment"># 点击 继续显示摘要，然后点击 创建令牌。</span></pre></td></tr><tr><td data-num="20"></td><td><pre></pre></td></tr><tr><td data-num="21"></td><td><pre></pre></td></tr><tr><td data-num="22"></td><td><pre>）</pre></td></tr><tr><td data-num="23"></td><td><pre><span class="token comment"># 填入刚 Cloudflare 的 API Token</span></pre></td></tr><tr><td data-num="24"></td><td><pre><span class="token builtin class-name">export</span> <span class="token assign-left variable">CF_Token</span><span class="token operator">=</span><span class="token string">"你的_Cloudflare_API_Token"</span></pre></td></tr><tr><td data-num="25"></td><td><pre></pre></td></tr><tr><td data-num="26"></td><td><pre><span class="token comment"># 填入你的 Cloudflare 账户 ID (可选，但在某些复杂账户结构下推荐)</span></pre></td></tr><tr><td data-num="27"></td><td><pre><span class="token comment"># 获取方式：Cloudflare 右侧边栏 -> 概述 -> 复制 "帐户 ID"</span></pre></td></tr><tr><td data-num="28"></td><td><pre><span class="token builtin class-name">export</span> <span class="token assign-left variable">CF_Account_ID</span><span class="token operator">=</span><span class="token string">"你的_Cloudflare_Account_ID"</span></pre></td></tr><tr><td data-num="29"></td><td><pre></pre></td></tr><tr><td data-num="30"></td><td><pre><span class="token comment"># 签发证书，使用 dns_cf 插件进行签发</span></pre></td></tr><tr><td data-num="31"></td><td><pre><span class="token comment"># -d example.com: 主域名</span></pre></td></tr><tr><td data-num="32"></td><td><pre><span class="token comment"># -d *.example.com: 通配符域名（覆盖所有子域名）</span></pre></td></tr><tr><td data-num="33"></td><td><pre>acme.sh <span class="token parameter variable">--issue</span> <span class="token parameter variable">--dns</span> dns_cf <span class="token parameter variable">-d</span> example.com <span class="token parameter variable">-d</span> <span class="token string">"*.example.com"</span></pre></td></tr><tr><td data-num="34"></td><td><pre></pre></td></tr><tr><td data-num="35"></td><td><pre><span class="token comment"># 安装证书到 Nginx</span></pre></td></tr><tr><td data-num="36"></td><td><pre><span class="token comment">#--key-file: 私钥路径。</span></pre></td></tr><tr><td data-num="37"></td><td><pre><span class="token comment">#--fullchain-file: 完整证书链路径。</span></pre></td></tr><tr><td data-num="38"></td><td><pre><span class="token comment">#--reloadcmd: 核心参数。当证书自动续期后，该命令会自动执行，重载 Nginx 使新证书生效</span></pre></td></tr><tr><td data-num="39"></td><td><pre><span class="token function">sudo</span> acme.sh --install-cert <span class="token parameter variable">-d</span> example.com <span class="token punctuation">\</span></pre></td></tr><tr><td data-num="40"></td><td><pre>--key-file       /etc/nginx/ssl/example.com.key <span class="token punctuation">\</span></pre></td></tr><tr><td data-num="41"></td><td><pre>--fullchain-file /etc/nginx/ssl/example.com.crt <span class="token punctuation">\</span></pre></td></tr><tr><td data-num="42"></td><td><pre><span class="token parameter variable">--reloadcmd</span>      <span class="token string">"docker restart nginx"</span></pre></td></tr><tr><td data-num="43"></td><td><pre></pre></td></tr><tr><td data-num="44"></td><td><pre><span class="token comment"># 验证自动续期</span></pre></td></tr><tr><td data-num="45"></td><td><pre><span class="token comment"># acme.sh 安装时会自动添加一个 Cron 定时任务，每天凌晨检查证书有效期</span></pre></td></tr><tr><td data-num="46"></td><td><pre><span class="token function">crontab</span> <span class="token parameter variable">-l</span></pre></td></tr><tr><td data-num="47"></td><td><pre></pre></td></tr><tr><td data-num="48"></td><td><pre><span class="token comment"># 手动测试续期（Dry Run）：</span></pre></td></tr><tr><td data-num="49"></td><td><pre><span class="token comment"># 为了确认自动续期流程（包括重载 Nginx）是否正常工作，可以执行模拟续期</span></pre></td></tr><tr><td data-num="50"></td><td><pre><span class="token comment"># 如果输出显示 Renew success 且没有报错，说明自动续期配置完美</span></pre></td></tr><tr><td data-num="51"></td><td><pre>acme.sh <span class="token parameter variable">--renew</span> <span class="token parameter variable">-d</span> example.com --dry-run</pre></td></tr><tr><td data-num="52"></td><td><pre></pre></td></tr><tr><td data-num="53"></td><td><pre><span class="token comment"># 确认域名是否真的签发成功</span></pre></td></tr><tr><td data-num="54"></td><td><pre>acme.sh <span class="token parameter variable">--list</span></pre></td></tr></table></figure><div class="note danger no-icon">
+<p>注意事项 :</p>
+<ul>
+<li>申请证书前，nginx 配置文件中证书路径部分需注释掉，否则会导致 nginx 报错</li>
+<li>证书申请成功后，切勿直接使用  <code>~/.acme.sh/</code>  目录下的证书文件</li>
+<li>使用  <code>--install-cert</code>  命令，证书自动续期后，自动将新证书复制到相同位置</li>
+<li>nginx 配置文件， <code>ssl_certificate</code>  指令必须指向  <code>fullchain.cer</code>  (或  <code>fullchain.pem</code> ) 文件，而不是域名对应的  <code>.cer</code>  文件</li>
+</ul>
+</div>
+
+      <div class="tags">
+          <a href="/tags/%E8%AF%B4%E6%98%8E%E6%96%87%E6%A1%A3/" rel="tag"><i class="ic i-tag"></i> 说明文档</a>
+          <a href="/tags/Nginx/" rel="tag"><i class="ic i-tag"></i> Nginx</a>
+      </div>
+  </div>
+
+   <footer>
+
+    <div class="meta">
+  <span class="item">
+    <span class="icon">
+      <i class="ic i-calendar-check"></i>
+    </span>
+    <span class="text">更新于</span>
+    <time title="修改时间：2026-04-13 23:28:01" itemprop="dateModified" datetime="2026-04-13T23:28:01+08:00">2026-04-13</time>
+  </span>
+  
+  <span class="item" data-path="/procedure/frames/nginx/BasicConfig/" title="阅读次数">
+        <i class="ic i-eye"></i>
+      </span>
+      <span class="text">阅读次数</span>
+      <span class="waline-pageview-count"></span>
+      <span class="text">次</span>
+  </span>
+</div>
+
+      
+
+<div id="copyright">
+<ul>
+  <li class="author">
+    <strong>本文作者： </strong>MuBai <i class="ic i-at"><em>@</em></i>源夢
+  </li>
+  <li class="link">
+    <strong>本文链接：</strong>
+    <a href="https://blog.mubai.link/procedure/frames/nginx/BasicConfig/" title="Nginx 基础配置">https://blog.mubai.link/procedure/frames/nginx/BasicConfig/</a>
+  </li>
+  <li class="license">
+    <strong>版权声明： </strong>本站所有文章除特别声明外，均采用 <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC9kZWVkLnpo"><i class="ic i-creative-commons"><em>(CC)</em></i>BY-NC-SA</span> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+  </footer>
+
+</article>
+
+  </div>
+  
+
+<div class="post-nav">
+    <div class="item left">
+      
+
+  <a href="/procedure/application/common/typora/" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;www.loliapi.com&#x2F;acg&#x2F;?571129" title="Typora使用文档">
+  <span class="type">上一篇</span>
+  <span class="category"><i class="ic i-flag"></i> typora</span>
+  <h3>Typora使用文档</h3>
+  </a>
+
+    </div>
+    <div class="item right">
+    </div>
+</div>
+
+  
+  <div class="wrap" id="comments">
+      <div id="waline-comment"></div>
+  </div>
+
+
+        </div>
+        <div id="sidebar">
+          
+
+<div class="inner">
+
+  <div class="panels">
+    <div class="inner">
+      <div class="contents panel pjax" data-title="文章目录">
+          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#nginx-%E5%9F%BA%E7%A1%80%E9%85%8D%E7%BD%AE"><span class="toc-number">1.</span> <span class="toc-text"> Nginx 基础配置</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-nginx-docker-%E5%90%AF%E5%8A%A8"><span class="toc-number">1.1.</span> <span class="toc-text"> 1. Nginx Docker 启动</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#docker-run-%E9%83%A8%E7%BD%B2"><span class="toc-number">1.1.1.</span> <span class="toc-text"> docker run 部署</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#docker-compose-%E9%83%A8%E7%BD%B2"><span class="toc-number">1.1.2.</span> <span class="toc-text"> docker compose 部署</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2nginx-ssl-%E9%85%8D%E7%BD%AE"><span class="toc-number">1.2.</span> <span class="toc-text"> 2.Nginx SSL 配置</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1nginx-config%E9%85%8D%E7%BD%AE"><span class="toc-number">1.2.1.</span> <span class="toc-text"> 1.Nginx config 配置</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-nginx-%E5%AE%B9%E5%99%A8%E4%BF%A1%E6%81%AF%E9%85%8D%E7%BD%AE"><span class="toc-number">1.2.2.</span> <span class="toc-text"> 2. Nginx 容器信息配置</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3ssl%E8%AF%81%E4%B9%A6%E7%94%B3%E8%AF%B7"><span class="toc-number">1.2.3.</span> <span class="toc-text"> 3.SSL 证书申请</span></a></li></ol></li></ol></li></ol>
+      </div>
+      <div class="related panel pjax" data-title="系列文章">
+        <ul>
+          <li class="active"><a href="/procedure/frames/nginx/BasicConfig/" rel="bookmark" title="Nginx 基础配置">Nginx 基础配置</a></li>
+        </ul>
+      </div>
+      <div class="overview panel" data-title="站点概览">
+        <div class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <img class="image" itemprop="image" alt="MuBai"
+      data-src="/images/avatar.jpg">
+  <p class="name" itemprop="name">MuBai</p>
+  <div class="description" itemprop="description">随心笔录 & 知识存档</div>
+</div>
+
+<nav class="state">
+    <div class="item posts">
+      <a href="/archives/">
+        <span class="count">27</span>
+        <span class="name">文章</span>
+      </a>
+    </div>
+    <div class="item categories">
+      <a href="/categories/">
+        <span class="count">19</span>
+        <span class="name">分类</span>
+      </a>
+    </div>
+    <div class="item tags">
+      <a href="/tags/">
+        <span class="count">18</span>
+        <span class="name">标签</span>
+      </a>
+    </div>
+</nav>
+
+<div class="social">
+      <span class="exturl item github" data-url="aHR0cHM6Ly9naXRodWIuY29tL1Byb3VkTXVCYWk=" title="https:&#x2F;&#x2F;github.com&#x2F;ProudMuBai"><i class="ic i-github"></i></span>
+      <span class="exturl item twitter" data-url="aHR0cHM6Ly94LmNvbS9NdUJhaWVtbQ==" title="https:&#x2F;&#x2F;x.com&#x2F;MuBaiemm"><i class="ic i-twitter"></i></span>
+      <span class="exturl item telegram" data-url="aHR0cHM6Ly90Lm1lL011QmFpQ3M=" title="https:&#x2F;&#x2F;t.me&#x2F;MuBaiCs"><i class="ic i-telegram"></i></span>
+</div>
+
+<ul class="menu">
+  
+    
+  <li class="item">
+    <a href="/" rel="section"><i class="ic i-home"></i>首页</a>
+  </li>
+
+        
+  <li class="item dropdown">
+      <a href="javascript:void(0);"><i class="ic i-feather"></i>文章</a>
+    <ul class="submenu">
+
+        
+  <li class="item">
+    <a href="/archives/" rel="section"><i class="ic i-list-alt"></i>归档</a>
+  </li>
+
+        
+  <li class="item">
+    <a href="/categories/" rel="section"><i class="ic i-th"></i>分类</a>
+  </li>
+
+        
+  <li class="item">
+    <a href="/tags/" rel="section"><i class="ic i-tags"></i>标签</a>
+  </li>
+
+  </ul>
+    
+  <li class="item">
+    <a href="/vestige/about/Summary/" rel="section"><i class="ic i-user"></i>关于</a>
+  </li>
+
+    
+  <li class="item">
+    <a href="/resource/links/friends/" rel="section"><i class="ic i-heart"></i>友链</a>
+  </li>
+
+    
+  <li class="item">
+    <a href="/resource/links/resource-navigation/" rel="section"><i class="ic i-magic"></i>工具</a>
+  </li>
+
+
+</ul>
+
+      </div>
+    </div>
+  </div>
+
+  <ul id="quick">
+    <li class="prev pjax">
+    </li>
+    <li class="up"><i class="ic i-arrow-up"></i></li>
+    <li class="down"><i class="ic i-arrow-down"></i></li>
+    <li class="next pjax">
+    </li>
+    <li class="percent"></li>
+  </ul>
+</div>
+
+
+        </div>
+        <div class="dimmer"></div>
+      </div>
+    </main>
+    <footer id="footer">
+      <div class="inner">
+        <div class="widgets">
+          
+<div class="rpost pjax">
+  <h2>随机文章</h2>
+  <ul>
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/procedure/" title="分类于 程序">程序</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/procedure/hexo/" title="分类于 hexo">hexo</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/procedure/hexo/Theme-Shoka-Documentation/" title="分类于 Theme Shoka Documentation">Theme Shoka Documentation</a>
+</div>
+
+    <span><a href="/procedure/application/hexo/shoka/display/" title="Step.3 界面显示">Step.3 界面显示</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/procedure/" title="分类于 程序">程序</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/procedure/MySQL/" title="分类于 MySQL">MySQL</a>
+</div>
+
+    <span><a href="/procedure/frames/others/mysql/NodeQuerySQL/" title="Sql 记录">Sql 记录</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/pdl/" title="分类于 编程">编程</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/pdl/GoLang/" title="分类于 GoLang">GoLang</a>
+</div>
+
+    <span><a href="/pdl/GoLang/GoLang%E5%85%A5%E9%97%A8%E7%AF%87(%E4%B8%8A)/" title="GoLang入门笔记(上)">GoLang入门笔记(上)</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/procedure/" title="分类于 程序">程序</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/procedure/Git/" title="分类于 Git">Git</a>
+</div>
+
+    <span><a href="/procedure/frames/git/Git/" title="Git常用指令">Git常用指令</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/pdl/" title="分类于 编程">编程</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/pdl/Vue/" title="分类于 Vue">Vue</a>
+</div>
+
+    <span><a href="/pdl/NodeJs/Vue/vite/" title="Vite入门">Vite入门</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/pdl/" title="分类于 编程">编程</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/pdl/React/" title="分类于 React">React</a>
+</div>
+
+    <span><a href="/pdl/NodeJs/React/React%E5%85%A5%E9%97%A8%E7%AF%87/" title="React入门篇">React入门篇</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/pdl/" title="分类于 编程">编程</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/pdl/Vue/" title="分类于 Vue">Vue</a>
+</div>
+
+    <span><a href="/pdl/NodeJs/Vue/%E5%89%8D%E7%AB%AF%E6%96%87%E6%A1%A3/" title="前端常用API">前端常用API</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/pdl/" title="分类于 编程">编程</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/pdl/GoLang/" title="分类于 GoLang">GoLang</a>
+</div>
+
+    <span><a href="/pdl/GoLang/GoLang%E6%8B%93%E5%B1%95/" title="GoLang入门笔记(下)">GoLang入门笔记(下)</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/procedure/" title="分类于 程序">程序</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/procedure/FrontEnd/" title="分类于 FrontEnd">FrontEnd</a>
+</div>
+
+    <span><a href="/pdl/NodeJs/FrontEnd/webKnowLedge/" title="前端基础知识">前端基础知识</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/procedure/" title="分类于 程序">程序</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/procedure/hexo/" title="分类于 hexo">hexo</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/procedure/hexo/Theme-Shoka-Documentation/" title="分类于 Theme Shoka Documentation">Theme Shoka Documentation</a>
+</div>
+
+    <span><a href="/procedure/application/hexo/shoka/theme-shoka-doc/" title="Hexo主题Shoka &amp; multi-markdown-it渲染器使用说明">Hexo主题Shoka & multi-markdown-it渲染器使用说明</a></span>
+  </li>
+
+  </ul>
+</div>
+<div>
+  <h2>最新评论</h2>
+  <ul id="waline-recent"></ul>
+</div>
+
+        </div>
+        <div class="status">
+  <div class="copyright">
+    
+    &copy; 
+    <span itemprop="copyrightYear">2026</span>
+    <span class="with-love">
+      <i class="ic i-sakura rotate"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">MuBai @ MuBai Boat</span>
+  </div>
+  <div class="count">
+    <span class="post-meta-item-icon">
+      <i class="ic i-chart-area"></i>
+    </span>
+    <span title="站点总字数">333k 字</span>
+
+    <span class="post-meta-item-icon">
+      <i class="ic i-coffee"></i>
+    </span>
+    <span title="站点阅读时长">5:03</span>
+  </div>
+</div>
+
+      </div>
+    </footer>
+  </div>
+<script data-config type="text/javascript">
+  var LOCAL = {
+    path: 'procedure/frames/nginx/BasicConfig/',
+    favicon: {
+      show: "(*^▽^*)",
+      hide: "o(╥﹏╥)o"
+    },
+    search : {
+      placeholder: "文章搜索",
+      empty: "关于 「 ${query} 」，什么也没搜到",
+      stats: "${time} ms 内找到 ${hits} 条结果"
+    },
+    waline: true,fancybox: true,
+    copyright: '复制成功，转载请遵守 <i class="ic i-creative-commons"></i>BY-NC-SA 协议。',
+    ignores : [
+      function(uri) {
+        return uri.includes('#');
+      },
+      function(uri) {
+        return new RegExp(LOCAL.path+"$").test(uri);
+      }
+    ]
+  };
+</script>
+
+
+<script src="https://unpkg.com/pace-js@1.0.2/pace.min.js"></script><script src="https://unpkg.com/pjax@0.2.8/pjax.min.js"></script><script src="https://unpkg.com/whatwg-fetch@3.4.0/dist/fetch.umd.min.js"></script><script src="https://unpkg.com/animejs@3.2.0/lib/anime.min.js"></script><script src="https://unpkg.com/algoliasearch@4/dist/algoliasearch-lite.umd.js"></script><script src="https://unpkg.com/instantsearch.js@4/dist/instantsearch.production.min.js"></script><script src="https://unpkg.com/lozad@1/dist/lozad.min.js"></script><script src="https://unpkg.com/quicklink@2/dist/quicklink.umd.js"></script>
+
+<script src="/js/app.js?v=0.2.5"></script>
+
+
+
+
+</body>
+</html>

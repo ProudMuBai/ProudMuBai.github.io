@@ -24,7 +24,7 @@
 <link rel="stylesheet" href="/css/app.css?v=0.2.5">
 
   
-  <meta name="keywords" content="说明文档,axios" />
+  <meta name="keywords" content="axios,说明文档" />
 
 
 <link rel="canonical" href="https://blog.mubai.link/pdl/NodeJs/Vue/Axios/">
@@ -117,12 +117,12 @@ MuBai Boat = 源夢 = 人生如逆旅, 我亦是行人</title>
       </div>
       <div id="imgs" class="pjax">
         <ul>
-          <li class="item" data-background-image="https://www.loliapi.com/acg/?975307"></li>
-          <li class="item" data-background-image="https://www.loliapi.com/acg/?420612"></li>
-          <li class="item" data-background-image="https://www.loliapi.com/acg/?256029"></li>
-          <li class="item" data-background-image="https://www.loliapi.com/acg/?75443"></li>
-          <li class="item" data-background-image="https://www.loliapi.com/acg/?926443"></li>
-          <li class="item" data-background-image="https://www.loliapi.com/acg/?464254"></li>
+          <li class="item" data-background-image="https://www.loliapi.com/acg/?445637"></li>
+          <li class="item" data-background-image="https://www.loliapi.com/acg/?223812"></li>
+          <li class="item" data-background-image="https://www.loliapi.com/acg/?742508"></li>
+          <li class="item" data-background-image="https://www.loliapi.com/acg/?641543"></li>
+          <li class="item" data-background-image="https://www.loliapi.com/acg/?652504"></li>
+          <li class="item" data-background-image="https://www.loliapi.com/acg/?70301"></li>
         </ul>
       </div>
     </header>
@@ -259,8 +259,8 @@ MuBai Boat = 源夢 = 人生如逆旅, 我亦是行人</title>
 <figure class="highlight javascript"><figcaption data-lang="javascript"></figcaption><table><tr><td data-num="1"></td><td><pre>axios<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">'/user/111'</span><span class="token punctuation">)</span></pre></td></tr><tr><td data-num="2"></td><td><pre><span class="token punctuation">.</span><span class="token function">catch</span><span class="token punctuation">(</span><span class="token parameter">error</span><span class="token operator">=></span> <span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="3"></td><td><pre>    <span class="token keyword">if</span> <span class="token punctuation">(</span>error<span class="token punctuation">.</span>response<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="4"></td><td><pre>        <span class="token comment">// 发送请求后，服务端返回响应码不是 2xx</span></pre></td></tr><tr><td data-num="5"></td><td><pre>        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>error<span class="token punctuation">.</span>response<span class="token punctuation">.</span>data<span class="token punctuation">)</span></pre></td></tr><tr><td data-num="6"></td><td><pre>        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>error<span class="token punctuation">.</span>response<span class="token punctuation">.</span>status<span class="token punctuation">)</span></pre></td></tr><tr><td data-num="7"></td><td><pre>        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>error<span class="token punctuation">.</span>response<span class="token punctuation">.</span>headers<span class="token punctuation">)</span></pre></td></tr><tr><td data-num="8"></td><td><pre>    <span class="token punctuation">&#125;</span> <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>error<span class="token punctuation">.</span>request<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="9"></td><td><pre>        <span class="token comment">// 发送请求但是没有响应返回</span></pre></td></tr><tr><td data-num="10"></td><td><pre>        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>error<span class="token punctuation">.</span>request<span class="token punctuation">)</span></pre></td></tr><tr><td data-num="11"></td><td><pre>    <span class="token punctuation">&#125;</span> <span class="token keyword">else</span> <span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="12"></td><td><pre>        <span class="token comment">// 未知错误</span></pre></td></tr><tr><td data-num="13"></td><td><pre>        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'Error'</span><span class="token punctuation">,</span>error<span class="token punctuation">.</span>message<span class="token punctuation">)</span></pre></td></tr><tr><td data-num="14"></td><td><pre>    <span class="token punctuation">&#125;</span></pre></td></tr><tr><td data-num="15"></td><td><pre>    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>error<span class="token punctuation">.</span>config<span class="token punctuation">)</span></pre></td></tr><tr><td data-num="16"></td><td><pre><span class="token punctuation">&#125;</span><span class="token punctuation">)</span></pre></td></tr></table></figure><h2 id="4axios无感知刷新token"><a class="anchor" href="#4axios无感知刷新token">#</a> 4.axios 无感知刷新 token</h2>
 <figure class="highlight javascript"><figcaption data-lang="javascript"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token keyword">import</span> axios <span class="token keyword">from</span> <span class="token string">"axios"</span><span class="token punctuation">;</span> <span class="token comment">// 引入 axios</span></pre></td></tr><tr><td data-num="2"></td><td><pre><span class="token keyword">import</span> qs <span class="token keyword">from</span> <span class="token string">"qs"</span><span class="token punctuation">;</span><span class="token comment">// 序列化 post 接口请求参数</span></pre></td></tr><tr><td data-num="3"></td><td><pre><span class="token keyword">import</span> LocalStorage <span class="token keyword">from</span> <span class="token string">"./localStorage.js"</span><span class="token punctuation">;</span> <span class="token comment">//H5 本地存储封装方法</span></pre></td></tr><tr><td data-num="4"></td><td><pre><span class="token keyword">let</span> <span class="token constant">SECURITY_URL</span> <span class="token operator">=</span> <span class="token string">"http://192.168.1.17:5505/security-amass/"</span><span class="token punctuation">;</span><span class="token comment">// 刷新 token 接口的 base 路径</span></pre></td></tr><tr><td data-num="5"></td><td><pre>axios<span class="token punctuation">.</span>defaults<span class="token punctuation">.</span>headers<span class="token punctuation">.</span>post<span class="token punctuation">[</span><span class="token string">"Content-Type"</span><span class="token punctuation">]</span> <span class="token operator">=</span><span class="token string">"application/x-www-form-urlencoded;charset=UTF-8"</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="6"></td><td><pre>axios<span class="token punctuation">.</span>defaults<span class="token punctuation">.</span>headers<span class="token punctuation">.</span>post<span class="token punctuation">[</span><span class="token string">"Access-Control-Allow-Origin"</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">"*"</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="7"></td><td><pre>axios<span class="token punctuation">.</span>defaults<span class="token punctuation">.</span>withCredentials <span class="token operator">=</span> <span class="token boolean">false</span><span class="token punctuation">;</span> <span class="token comment">// 携带 cookie</span></pre></td></tr><tr><td data-num="8"></td><td><pre><span class="token comment">// 创建一个 axios 实例</span></pre></td></tr><tr><td data-num="9"></td><td><pre><span class="token keyword">const</span> instance <span class="token operator">=</span> axios<span class="token punctuation">.</span><span class="token function">create</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="10"></td><td><pre>  <span class="token literal-property property">timeout</span><span class="token operator">:</span> <span class="token number">300000</span><span class="token punctuation">,</span></pre></td></tr><tr><td data-num="11"></td><td><pre><span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="12"></td><td><pre><span class="token comment">// 是否正在请求刷新 token 接口的标记</span></pre></td></tr><tr><td data-num="13"></td><td><pre><span class="token keyword">let</span> isRefreshing <span class="token operator">=</span> <span class="token boolean">false</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="14"></td><td><pre><span class="token comment">// 请求队列</span></pre></td></tr><tr><td data-num="15"></td><td><pre><span class="token keyword">let</span> requests <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="16"></td><td><pre><span class="token comment">// 刷新 token 方法</span></pre></td></tr><tr><td data-num="17"></td><td><pre><span class="token keyword">function</span> <span class="token function">refreshToken</span><span class="token punctuation">(</span><span class="token parameter">params</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="18"></td><td><pre>  <span class="token keyword">return</span> instance<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token constant">SECURITY_URL</span> <span class="token operator">+</span> <span class="token string">"oauth/token"</span><span class="token punctuation">,</span> params<span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="19"></td><td><pre><span class="token punctuation">&#125;</span></pre></td></tr><tr><td data-num="20"></td><td><pre><span class="token comment">// 请求结果拦截器</span></pre></td></tr><tr><td data-num="21"></td><td><pre>instance<span class="token punctuation">.</span>interceptors<span class="token punctuation">.</span>response<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span></pre></td></tr><tr><td data-num="22"></td><td><pre>  <span class="token punctuation">(</span><span class="token parameter">response</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="23"></td><td><pre>    <span class="token comment">// 接下来会在这里进行 token 过期的逻辑处理</span></pre></td></tr><tr><td data-num="24"></td><td><pre>    <span class="token keyword">const</span> config <span class="token operator">=</span> response<span class="token punctuation">.</span>config<span class="token punctuation">;</span></pre></td></tr><tr><td data-num="25"></td><td><pre>    <span class="token keyword">let</span> code <span class="token operator">=</span> response<span class="token punctuation">.</span>data<span class="token punctuation">.</span>code<span class="token punctuation">;</span></pre></td></tr><tr><td data-num="26"></td><td><pre>    <span class="token comment">// 这里的 code 值是跟后端约定好的， 40009 代表 token 已经过期</span></pre></td></tr><tr><td data-num="27"></td><td><pre>    <span class="token keyword">if</span> <span class="token punctuation">(</span>code <span class="token operator">==</span> <span class="token string">"40009"</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="28"></td><td><pre>      <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>isRefreshing<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="29"></td><td><pre>        isRefreshing <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="30"></td><td><pre>        <span class="token keyword">let</span> refresh_token <span class="token operator">=</span> LocalStorage<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">"refresh_token"</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="31"></td><td><pre>        <span class="token comment">// 这里是我的项目中刷新 token 要传的参数，具体都传那些参数需要与后端开发确认</span></pre></td></tr><tr><td data-num="32"></td><td><pre>        <span class="token keyword">let</span> loginData <span class="token operator">=</span> <span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="33"></td><td><pre>          <span class="token literal-property property">grant_type</span><span class="token operator">:</span> <span class="token string">"refresh_token"</span><span class="token punctuation">,</span></pre></td></tr><tr><td data-num="34"></td><td><pre>          <span class="token literal-property property">client_id</span><span class="token operator">:</span> <span class="token string">"impawning"</span><span class="token punctuation">,</span></pre></td></tr><tr><td data-num="35"></td><td><pre>          <span class="token literal-property property">client_secret</span><span class="token operator">:</span> <span class="token string">"impawning"</span><span class="token punctuation">,</span></pre></td></tr><tr><td data-num="36"></td><td><pre>          refresh_token<span class="token punctuation">,</span></pre></td></tr><tr><td data-num="37"></td><td><pre>        <span class="token punctuation">&#125;</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="38"></td><td><pre>        <span class="token function">refreshToken</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span> <span class="token literal-property property">params</span><span class="token operator">:</span> loginData <span class="token punctuation">&#125;</span><span class="token punctuation">)</span></pre></td></tr><tr><td data-num="39"></td><td><pre>          <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">res</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="40"></td><td><pre>            <span class="token keyword">let</span> access_token <span class="token operator">=</span> res<span class="token punctuation">.</span>data<span class="token punctuation">.</span>access_token<span class="token punctuation">;</span></pre></td></tr><tr><td data-num="41"></td><td><pre>            <span class="token keyword">let</span> refresh_token <span class="token operator">=</span> res<span class="token punctuation">.</span>data<span class="token punctuation">.</span>refresh_token<span class="token punctuation">;</span></pre></td></tr><tr><td data-num="42"></td><td><pre>            LocalStorage<span class="token punctuation">.</span><span class="token function">set</span><span class="token punctuation">(</span><span class="token string">"access_token"</span><span class="token punctuation">,</span> res<span class="token punctuation">.</span>data<span class="token punctuation">.</span>access_token<span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="43"></td><td><pre>            LocalStorage<span class="token punctuation">.</span><span class="token function">set</span><span class="token punctuation">(</span><span class="token string">"refresh_token"</span><span class="token punctuation">,</span> res<span class="token punctuation">.</span>data<span class="token punctuation">.</span>refresh_token<span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="44"></td><td><pre>            config<span class="token punctuation">.</span>headers<span class="token punctuation">[</span><span class="token string">"access_token"</span><span class="token punctuation">]</span> <span class="token operator">=</span> access_token<span class="token punctuation">;</span></pre></td></tr><tr><td data-num="45"></td><td><pre>            config<span class="token punctuation">.</span>headers<span class="token punctuation">[</span><span class="token string">"refresh_token"</span><span class="token punctuation">]</span> <span class="token operator">=</span> refresh_token<span class="token punctuation">;</span></pre></td></tr><tr><td data-num="46"></td><td><pre>            requests<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">cb</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token function">cb</span><span class="token punctuation">(</span>access_token<span class="token punctuation">,</span> refresh_token<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="47"></td><td><pre>            requests <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="48"></td><td><pre>            <span class="token keyword">return</span> <span class="token function">instance</span><span class="token punctuation">(</span>config<span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="49"></td><td><pre>          <span class="token punctuation">&#125;</span><span class="token punctuation">)</span></pre></td></tr><tr><td data-num="50"></td><td><pre>          <span class="token punctuation">.</span><span class="token function">catch</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">err</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="51"></td><td><pre>            window<span class="token punctuation">.</span>location<span class="token punctuation">.</span>href <span class="token operator">=</span> <span class="token string">"/"</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="52"></td><td><pre>          <span class="token punctuation">&#125;</span><span class="token punctuation">)</span></pre></td></tr><tr><td data-num="53"></td><td><pre>          <span class="token punctuation">.</span><span class="token function">finally</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="54"></td><td><pre>            isRefreshing <span class="token operator">=</span> <span class="token boolean">false</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="55"></td><td><pre>          <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="56"></td><td><pre>      <span class="token punctuation">&#125;</span> <span class="token keyword">else</span> <span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="57"></td><td><pre>        <span class="token comment">// 正在刷新 token，返回一个未执行 resolve 的 promise</span></pre></td></tr><tr><td data-num="58"></td><td><pre>        <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">Promise</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">resolve</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="59"></td><td><pre>          <span class="token comment">// 将 resolve 放进队列，用一个函数形式来保存，等 token 刷新后直接执行</span></pre></td></tr><tr><td data-num="60"></td><td><pre>          requests<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">access_token<span class="token punctuation">,</span> refresh_token</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="61"></td><td><pre>            config<span class="token punctuation">.</span>headers<span class="token punctuation">[</span><span class="token string">"access_token"</span><span class="token punctuation">]</span> <span class="token operator">=</span> access_token<span class="token punctuation">;</span></pre></td></tr><tr><td data-num="62"></td><td><pre>            config<span class="token punctuation">.</span>headers<span class="token punctuation">[</span><span class="token string">"refresh_token"</span><span class="token punctuation">]</span> <span class="token operator">=</span> refresh_token<span class="token punctuation">;</span></pre></td></tr><tr><td data-num="63"></td><td><pre>            <span class="token function">resolve</span><span class="token punctuation">(</span><span class="token function">instance</span><span class="token punctuation">(</span>config<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="64"></td><td><pre>          <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="65"></td><td><pre>        <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="66"></td><td><pre>      <span class="token punctuation">&#125;</span></pre></td></tr><tr><td data-num="67"></td><td><pre>    <span class="token punctuation">&#125;</span> <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>code <span class="token operator">==</span> <span class="token string">"40005"</span> <span class="token operator">||</span> code <span class="token operator">==</span> <span class="token string">"40003"</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span><span class="token comment">// 这里代表 token 失效和 token 错误</span></pre></td></tr><tr><td data-num="68"></td><td><pre>      window<span class="token punctuation">.</span>location<span class="token punctuation">.</span>href <span class="token operator">=</span> <span class="token string">"/"</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="69"></td><td><pre>    <span class="token punctuation">&#125;</span> <span class="token keyword">else</span> <span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="70"></td><td><pre>      <span class="token keyword">return</span> response<span class="token punctuation">;</span></pre></td></tr><tr><td data-num="71"></td><td><pre>    <span class="token punctuation">&#125;</span></pre></td></tr><tr><td data-num="72"></td><td><pre>  <span class="token punctuation">&#125;</span><span class="token punctuation">,</span></pre></td></tr><tr><td data-num="73"></td><td><pre>  <span class="token punctuation">(</span><span class="token parameter">error</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="74"></td><td><pre>    <span class="token keyword">return</span> Promise<span class="token punctuation">.</span><span class="token function">reject</span><span class="token punctuation">(</span>error<span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="75"></td><td><pre>  <span class="token punctuation">&#125;</span></pre></td></tr><tr><td data-num="76"></td><td><pre><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="77"></td><td><pre></pre></td></tr><tr><td data-num="78"></td><td><pre><span class="token keyword">const</span> api <span class="token operator">=</span> <span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="79"></td><td><pre>  <span class="token function">get</span><span class="token punctuation">(</span>url<span class="token punctuation">,</span> data<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="80"></td><td><pre>    instance<span class="token punctuation">.</span>defaults<span class="token punctuation">.</span>headers<span class="token punctuation">.</span>common<span class="token punctuation">[</span><span class="token string">"access_token"</span><span class="token punctuation">]</span> <span class="token operator">=</span> LocalStorage<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span></pre></td></tr><tr><td data-num="81"></td><td><pre>      <span class="token string">"access_token"</span></pre></td></tr><tr><td data-num="82"></td><td><pre>    <span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="83"></td><td><pre>    instance<span class="token punctuation">.</span>defaults<span class="token punctuation">.</span>headers<span class="token punctuation">.</span>common<span class="token punctuation">[</span><span class="token string">"refresh_token"</span><span class="token punctuation">]</span> <span class="token operator">=</span> LocalStorage<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span></pre></td></tr><tr><td data-num="84"></td><td><pre>      <span class="token string">"refresh_token"</span></pre></td></tr><tr><td data-num="85"></td><td><pre>    <span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="86"></td><td><pre>    <span class="token keyword">return</span> instance<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>url<span class="token punctuation">,</span> <span class="token punctuation">&#123;</span> <span class="token literal-property property">params</span><span class="token operator">:</span> data <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="87"></td><td><pre>  <span class="token punctuation">&#125;</span><span class="token punctuation">,</span></pre></td></tr><tr><td data-num="88"></td><td><pre>  <span class="token function">post</span><span class="token punctuation">(</span><span class="token parameter">url<span class="token punctuation">,</span> data</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="89"></td><td><pre>    instance<span class="token punctuation">.</span>defaults<span class="token punctuation">.</span>headers<span class="token punctuation">.</span>common<span class="token punctuation">[</span><span class="token string">"access_token"</span><span class="token punctuation">]</span> <span class="token operator">=</span> LocalStorage<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span></pre></td></tr><tr><td data-num="90"></td><td><pre>      <span class="token string">"access_token"</span></pre></td></tr><tr><td data-num="91"></td><td><pre>    <span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="92"></td><td><pre>    instance<span class="token punctuation">.</span>defaults<span class="token punctuation">.</span>headers<span class="token punctuation">.</span>common<span class="token punctuation">[</span><span class="token string">"refresh_token"</span><span class="token punctuation">]</span> <span class="token operator">=</span> LocalStorage<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span></pre></td></tr><tr><td data-num="93"></td><td><pre>      <span class="token string">"refresh_token"</span></pre></td></tr><tr><td data-num="94"></td><td><pre>    <span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="95"></td><td><pre>    <span class="token comment">//post 接口封装</span></pre></td></tr><tr><td data-num="96"></td><td><pre>    <span class="token keyword">return</span> instance<span class="token punctuation">.</span><span class="token function">post</span><span class="token punctuation">(</span>url<span class="token punctuation">,</span> qs<span class="token punctuation">.</span><span class="token function">stringify</span><span class="token punctuation">(</span>data<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="97"></td><td><pre>  <span class="token punctuation">&#125;</span><span class="token punctuation">,</span></pre></td></tr><tr><td data-num="98"></td><td><pre><span class="token punctuation">&#125;</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="99"></td><td><pre></pre></td></tr><tr><td data-num="100"></td><td><pre><span class="token keyword">export</span> <span class="token punctuation">&#123;</span> api <span class="token punctuation">&#125;</span><span class="token punctuation">;</span></pre></td></tr></table></figure>
       <div class="tags">
-          <a href="/tags/%E8%AF%B4%E6%98%8E%E6%96%87%E6%A1%A3/" rel="tag"><i class="ic i-tag"></i> 说明文档</a>
           <a href="/tags/axios/" rel="tag"><i class="ic i-tag"></i> axios</a>
+          <a href="/tags/%E8%AF%B4%E6%98%8E%E6%96%87%E6%A1%A3/" rel="tag"><i class="ic i-tag"></i> 说明文档</a>
       </div>
   </div>
 
@@ -312,20 +312,20 @@ MuBai Boat = 源夢 = 人生如逆旅, 我亦是行人</title>
     <div class="item left">
       
 
-  <a href="/pdl/NodeJs/Vue/vite/" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;www.loliapi.com&#x2F;acg&#x2F;?140766" title="Vite入门">
+  <a href="/pdl/NodeJs/Node/NodeConfig/" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;www.loliapi.com&#x2F;acg&#x2F;?412405" title="NodeJS配置">
   <span class="type">上一篇</span>
-  <span class="category"><i class="ic i-flag"></i> Vue</span>
-  <h3>Vite入门</h3>
+  <span class="category"><i class="ic i-flag"></i> NodeJS</span>
+  <h3>NodeJS配置</h3>
   </a>
 
     </div>
     <div class="item right">
       
 
-  <a href="/pdl/NodeJs/Node/NodeConfig/" itemprop="url" rel="next" data-background-image="https:&#x2F;&#x2F;www.loliapi.com&#x2F;acg&#x2F;?387524" title="NodeJS配置">
+  <a href="/pdl/NodeJs/Vue/vue3/" itemprop="url" rel="next" data-background-image="https:&#x2F;&#x2F;www.loliapi.com&#x2F;acg&#x2F;?625747" title="Vue3语法变化">
   <span class="type">下一篇</span>
-  <span class="category"><i class="ic i-flag"></i> NodeJS</span>
-  <h3>NodeJS配置</h3>
+  <span class="category"><i class="ic i-flag"></i> Vue</span>
+  <h3>Vue3语法变化</h3>
   </a>
 
     </div>
@@ -350,7 +350,7 @@ MuBai Boat = 源夢 = 人生如逆旅, 我亦是行人</title>
       </div>
       <div class="related panel pjax" data-title="系列文章">
         <ul>
-          <li><a href="/pdl/GoLang/GoLang%E6%8B%93%E5%B1%95/" rel="bookmark" title="GoLang入门笔记(下)">GoLang入门笔记(下)</a></li><li><a href="/pdl/GoLang/GoLang%E5%85%A5%E9%97%A8%E7%AF%87(%E4%B8%8A)/" rel="bookmark" title="GoLang入门笔记(上)">GoLang入门笔记(上)</a></li><li><a href="/pdl/GoLang/GoLang%E5%85%A5%E9%97%A8%E7%AF%87(%E4%B8%8B)/" rel="bookmark" title="GoLang入门笔记(下)">GoLang入门笔记(下)</a></li><li><a href="/pdl/NodeJs/React/React%E5%85%A5%E9%97%A8%E7%AF%87/" rel="bookmark" title="React入门篇">React入门篇</a></li><li><a href="/pdl/GoLang/GoLang%E5%9F%BA%E7%A1%80%E6%8B%93%E5%B1%95/" rel="bookmark" title="GoLang冷知识">GoLang冷知识</a></li><li><a href="/pdl/NodeJs/Node/NodeConfig/" rel="bookmark" title="NodeJS配置">NodeJS配置</a></li><li class="active"><a href="/pdl/NodeJs/Vue/Axios/" rel="bookmark" title="Axios用法及配置">Axios用法及配置</a></li><li><a href="/pdl/NodeJs/Vue/vite/" rel="bookmark" title="Vite入门">Vite入门</a></li><li><a href="/pdl/NodeJs/Vue/vue3/" rel="bookmark" title="Vue3语法变化">Vue3语法变化</a></li><li><a href="/pdl/NodeJs/Vue/%E5%89%8D%E7%AB%AF%E6%96%87%E6%A1%A3/" rel="bookmark" title="前端常用API">前端常用API</a></li><li><a href="/pdl/NodeJs/Vue/vue3%E6%9E%84%E5%BB%BA/" rel="bookmark" title="Vue项目构建">Vue项目构建</a></li>
+          <li><a href="/pdl/GoLang/GoLang%E6%8B%93%E5%B1%95/" rel="bookmark" title="GoLang入门笔记(下)">GoLang入门笔记(下)</a></li><li><a href="/pdl/GoLang/GoLang%E5%85%A5%E9%97%A8%E7%AF%87(%E4%B8%8A)/" rel="bookmark" title="GoLang入门笔记(上)">GoLang入门笔记(上)</a></li><li><a href="/pdl/GoLang/GoLang%E5%85%A5%E9%97%A8%E7%AF%87(%E4%B8%8B)/" rel="bookmark" title="GoLang入门笔记(下)">GoLang入门笔记(下)</a></li><li><a href="/pdl/NodeJs/React/React%E5%85%A5%E9%97%A8%E7%AF%87/" rel="bookmark" title="React入门篇">React入门篇</a></li><li><a href="/pdl/GoLang/GoLang%E5%9F%BA%E7%A1%80%E6%8B%93%E5%B1%95/" rel="bookmark" title="GoLang冷知识">GoLang冷知识</a></li><li><a href="/pdl/NodeJs/Vue/vite/" rel="bookmark" title="Vite入门">Vite入门</a></li><li><a href="/pdl/NodeJs/Vue/vue3/" rel="bookmark" title="Vue3语法变化">Vue3语法变化</a></li><li class="active"><a href="/pdl/NodeJs/Vue/Axios/" rel="bookmark" title="Axios用法及配置">Axios用法及配置</a></li><li><a href="/pdl/NodeJs/Node/NodeConfig/" rel="bookmark" title="NodeJS配置">NodeJS配置</a></li><li><a href="/pdl/NodeJs/Vue/vue3%E6%9E%84%E5%BB%BA/" rel="bookmark" title="Vue项目构建">Vue项目构建</a></li><li><a href="/pdl/NodeJs/Vue/%E5%89%8D%E7%AB%AF%E6%96%87%E6%A1%A3/" rel="bookmark" title="前端常用API">前端常用API</a></li>
         </ul>
       </div>
       <div class="overview panel" data-title="站点概览">
@@ -364,19 +364,19 @@ MuBai Boat = 源夢 = 人生如逆旅, 我亦是行人</title>
 <nav class="state">
     <div class="item posts">
       <a href="/archives/">
-        <span class="count">26</span>
+        <span class="count">27</span>
         <span class="name">文章</span>
       </a>
     </div>
     <div class="item categories">
       <a href="/categories/">
-        <span class="count">18</span>
+        <span class="count">19</span>
         <span class="name">分类</span>
       </a>
     </div>
     <div class="item tags">
       <a href="/tags/">
-        <span class="count">17</span>
+        <span class="count">18</span>
         <span class="name">标签</span>
       </a>
     </div>
@@ -440,12 +440,12 @@ MuBai Boat = 源夢 = 人生如逆旅, 我亦是行人</title>
 
   <ul id="quick">
     <li class="prev pjax">
-        <a href="/pdl/NodeJs/Vue/vite/" rel="prev" title="上一篇"><i class="ic i-chevron-left"></i></a>
+        <a href="/pdl/NodeJs/Node/NodeConfig/" rel="prev" title="上一篇"><i class="ic i-chevron-left"></i></a>
     </li>
     <li class="up"><i class="ic i-arrow-up"></i></li>
     <li class="down"><i class="ic i-arrow-down"></i></li>
     <li class="next pjax">
-        <a href="/pdl/NodeJs/Node/NodeConfig/" rel="next" title="下一篇"><i class="ic i-chevron-right"></i></a>
+        <a href="/pdl/NodeJs/Vue/vue3/" rel="next" title="下一篇"><i class="ic i-chevron-right"></i></a>
     </li>
     <li class="percent"></li>
   </ul>
@@ -468,32 +468,6 @@ MuBai Boat = 源夢 = 人生如逆旅, 我亦是行人</title>
     
 <div class="breadcrumb">
 <a href="/categories/pdl/" title="分类于 编程">编程</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/pdl/Vue/" title="分类于 Vue">Vue</a>
-</div>
-
-    <span><a href="/pdl/NodeJs/Vue/%E5%89%8D%E7%AB%AF%E6%96%87%E6%A1%A3/" title="前端常用API">前端常用API</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/procedure/" title="分类于 程序">程序</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/procedure/hexo/" title="分类于 hexo">hexo</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/procedure/hexo/Theme-Shoka-Documentation/" title="分类于 Theme Shoka Documentation">Theme Shoka Documentation</a>
-</div>
-
-    <span><a href="/procedure/application/hexo/shoka/display/" title="Step.3 界面显示">Step.3 界面显示</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/pdl/" title="分类于 编程">编程</a>
 </div>
 
     <span><a href="/pdl/NodeJs/Vue/Axios/" title="Axios用法及配置">Axios用法及配置</a></span>
@@ -503,14 +477,12 @@ MuBai Boat = 源夢 = 人生如逆旅, 我亦是行人</title>
   <li class="item">
     
 <div class="breadcrumb">
-<a href="/categories/procedure/" title="分类于 程序">程序</a>
+<a href="/categories/pdl/" title="分类于 编程">编程</a>
 <i class="ic i-angle-right"></i>
-<a href="/categories/procedure/hexo/" title="分类于 hexo">hexo</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/procedure/hexo/Theme-Shoka-Documentation/" title="分类于 Theme Shoka Documentation">Theme Shoka Documentation</a>
+<a href="/categories/pdl/Vue/" title="分类于 Vue">Vue</a>
 </div>
 
-    <span><a href="/procedure/application/hexo/shoka/config/" title="Step.2 基本配置">Step.2 基本配置</a></span>
+    <span><a href="/pdl/NodeJs/Vue/vue3/" title="Vue3语法变化">Vue3语法变化</a></span>
   </li>
 
       
@@ -532,33 +504,23 @@ MuBai Boat = 源夢 = 人生如逆旅, 我亦是行人</title>
 <a href="/categories/procedure/" title="分类于 程序">程序</a>
 <i class="ic i-angle-right"></i>
 <a href="/categories/procedure/hexo/" title="分类于 hexo">hexo</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/procedure/hexo/Theme-Shoka-Documentation/" title="分类于 Theme Shoka Documentation">Theme Shoka Documentation</a>
 </div>
 
-    <span><a href="/procedure/application/hexo/hexo-config-doc/" title="Hexo使用手册">Hexo使用手册</a></span>
+    <span><a href="/procedure/application/hexo/shoka/config/" title="Step.2 基本配置">Step.2 基本配置</a></span>
   </li>
 
       
   <li class="item">
     
 <div class="breadcrumb">
-<a href="/categories/procedure/" title="分类于 程序">程序</a>
+<a href="/categories/vestige/" title="分类于 迹忆">迹忆</a>
 <i class="ic i-angle-right"></i>
-<a href="/categories/procedure/Git/" title="分类于 Git">Git</a>
+<a href="/categories/vestige/%E7%AE%80%E4%BB%8B/" title="分类于 简介">简介</a>
 </div>
 
-    <span><a href="/procedure/frames/git/Git/" title="Git常用指令">Git常用指令</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/pdl/" title="分类于 编程">编程</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/pdl/Vue/" title="分类于 Vue">Vue</a>
-</div>
-
-    <span><a href="/pdl/NodeJs/Vue/vite/" title="Vite入门">Vite入门</a></span>
+    <span><a href="/vestige/about/Summary/" title="网站简介">网站简介</a></span>
   </li>
 
       
@@ -567,10 +529,22 @@ MuBai Boat = 源夢 = 人生如逆旅, 我亦是行人</title>
 <div class="breadcrumb">
 <a href="/categories/pdl/" title="分类于 编程">编程</a>
 <i class="ic i-angle-right"></i>
-<a href="/categories/pdl/React/" title="分类于 React">React</a>
+<a href="/categories/pdl/NodeJS/" title="分类于 NodeJS">NodeJS</a>
 </div>
 
-    <span><a href="/pdl/NodeJs/React/React%E5%85%A5%E9%97%A8%E7%AF%87/" title="React入门篇">React入门篇</a></span>
+    <span><a href="/pdl/NodeJs/Node/NodeConfig/" title="NodeJS配置">NodeJS配置</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/resource/" title="分类于 资源">资源</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/resource/links/" title="分类于 links">links</a>
+</div>
+
+    <span><a href="/resource/links/resource-navigation/" title="资源导航">资源导航</a></span>
   </li>
 
       
@@ -584,7 +558,31 @@ MuBai Boat = 源夢 = 人生如逆旅, 我亦是行人</title>
 <a href="/categories/procedure/hexo/Theme-Shoka-Documentation/" title="分类于 Theme Shoka Documentation">Theme Shoka Documentation</a>
 </div>
 
-    <span><a href="/procedure/application/hexo/shoka/theme-shoka-doc/" title="Hexo主题Shoka &amp; multi-markdown-it渲染器使用说明">Hexo主题Shoka & multi-markdown-it渲染器使用说明</a></span>
+    <span><a href="/procedure/application/hexo/shoka/display/" title="Step.3 界面显示">Step.3 界面显示</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/procedure/" title="分类于 程序">程序</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/procedure/typora/" title="分类于 typora">typora</a>
+</div>
+
+    <span><a href="/procedure/application/common/typora/" title="Typora使用文档">Typora使用文档</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/pdl/" title="分类于 编程">编程</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/pdl/GoLang/" title="分类于 GoLang">GoLang</a>
+</div>
+
+    <span><a href="/pdl/GoLang/GoLang%E5%85%A5%E9%97%A8%E7%AF%87(%E4%B8%8B)/" title="GoLang入门笔记(下)">GoLang入门笔记(下)</a></span>
   </li>
 
   </ul>
@@ -609,12 +607,12 @@ MuBai Boat = 源夢 = 人生如逆旅, 我亦是行人</title>
     <span class="post-meta-item-icon">
       <i class="ic i-chart-area"></i>
     </span>
-    <span title="站点总字数">326k 字</span>
+    <span title="站点总字数">333k 字</span>
 
     <span class="post-meta-item-icon">
       <i class="ic i-coffee"></i>
     </span>
-    <span title="站点阅读时长">4:56</span>
+    <span title="站点阅读时长">5:03</span>
   </div>
 </div>
 
